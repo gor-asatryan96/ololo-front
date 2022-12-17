@@ -7,7 +7,7 @@ const getRandomIntegerNineSymbol = () => (getRandomInteger(100000000, 999999999)
 
 
 const parseCentrifugeUrl = (url) => {
-  if (url.includes('ws:')) return url;
+  if (url.includes('ws:') || url.includes('wss:')) return url;
 
   return window.location.origin
     .replace('http:', 'ws:')
