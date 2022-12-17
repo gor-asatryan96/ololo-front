@@ -10,6 +10,9 @@ ARG REACT_WS_URL
 ENV REACT_BACK_URL=${REACT_BACK_URL}
 ENV REACT_WS_URL=${REACT_WS_URL}
 
+RUN echo 'Back url: ${REACT_BACK_URL}'
+RUN echo 'Ws url: ${REACT_WS_URL}'
+
 RUN npm run build
 
 FROM nginx
