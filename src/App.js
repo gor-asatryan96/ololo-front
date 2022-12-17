@@ -12,12 +12,13 @@ import Header from './components/common/Header/Header';
 import { openConnection } from './api/socket';
 import mediaQuery from './constants/style/mediaQueries';
 import RotateScreen from './components/mobile/RotateScreen/RotateScreen';
+import { parseCentrifugeUrl } from './utils/utils';
 
 const { START } = MAIN_SCENE_NAMES;
 
 // WS connection
 // openConnection(process.env.REACT_APP_WS_URL);
-openConnection(process.env.REACT_APP_WS_URL);
+openConnection(parseCentrifugeUrl(process.env.REACT_APP_WS_URL));
 
 function App() {
   const handle = useFullScreenHandle();

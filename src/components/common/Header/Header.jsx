@@ -13,6 +13,7 @@ import { useLanguageData } from '../../../context/LanguageProvider';
 import { getMobileOperatingSystem, numWithCommas } from '../../../helpers/general';
 import { useSound } from '../../../context/SoundProvider';
 import { closeConnection, openConnection } from '../../../api/socket';
+import { parseCentrifugeUrl } from '../../../utils/utils';
 
 const { START } = MAIN_SCENE_NAMES;
 
@@ -49,7 +50,7 @@ const Header = ({ parentStyle, toggleFullScreen }) => {
       window.parent.postMessage('OLOLO', '*');
     } else {
       closeConnection();
-      openConnection(process.env.REACT_APP_WS_URL);
+      openConnection(parseCentrifugeUrl(window.process.env.REACT_APP_WS_URL));
       // openConnection(process.env.REACT_APP_WS_URL);
       dispatch(setMainScene(START));
     }

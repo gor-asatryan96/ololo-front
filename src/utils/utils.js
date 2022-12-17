@@ -5,7 +5,18 @@ const getRandomInteger = (min, max) => {
 
 const getRandomIntegerNineSymbol = () => (getRandomInteger(100000000, 999999999));
 
+
+const parseCentrifugeUrl = (url) => {
+  if (url.includes('ws:')) return url;
+
+  return window.location.origin
+    .replace('http:', 'ws:')
+    .replace('https:', 'wss:') + url;
+};
+
+
 export {
   getRandomInteger,
   getRandomIntegerNineSymbol,
+  parseCentrifugeUrl
 };
