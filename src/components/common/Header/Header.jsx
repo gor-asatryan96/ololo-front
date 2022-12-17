@@ -49,7 +49,7 @@ const Header = ({ parentStyle, toggleFullScreen }) => {
       window.parent.postMessage('OLOLO', '*');
     } else {
       closeConnection();
-      openConnection(process.env.REACT_WS_URL);
+      openConnection(process.env.REACT_APP_WS_URL);
       // openConnection(process.env.REACT_APP_WS_URL);
       dispatch(setMainScene(START));
     }

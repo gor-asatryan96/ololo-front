@@ -14,7 +14,7 @@ export let centrifuge = null;
 export const openConnection = async (url) => {
   try {
     const urlToken = getTokenFromUrl();
-    const { token, userId, remoteId } = await sendRequest(process.env.REACT_BACK_URL, 'POST', { token: urlToken });
+    const { token, userId, remoteId } = await sendRequest(process.env.REACT_APP_BACK_URL, 'POST', { token: urlToken });
     // const { token, userId, remoteId } =
     // await sendRequest(process.env.REACT_APP_GET_TOKEN_URL, 'POST', { token: urlToken });
     dispatch(batchActions([ setUserId(userId), setRemoteId(remoteId) ]));
