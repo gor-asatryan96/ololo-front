@@ -9,7 +9,6 @@ import { sendRequest } from '../../helpers/fetch';
 import { setErrorMessage } from '../../redux/ducks/errorDuck';
 import { errorHandler } from './errorHandler';
 
-// eslint-disable-next-line import/no-mutable-exports
 export let centrifuge = null;
 
 export const openConnection = async (url) => {
