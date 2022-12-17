@@ -1,0 +1,10 @@
+@import "../../../assets/styles/media-variable";
+
+.leaders {
+  overflow: auto;
+  @media (min-width: $noTablet) {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+  }
+}

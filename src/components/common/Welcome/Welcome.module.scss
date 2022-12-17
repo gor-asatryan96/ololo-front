@@ -1,0 +1,113 @@
+@import "../../../assets/styles/media-variable";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../../../assets/images/common/background/background-mobile.svg");
+  background-color: var(--ololo-gray);
+  color: var(--ololo-white);
+
+  @media (max-width: $tablet) {
+    overflow: auto;
+  }
+
+  @media (min-width: $noTablet) {
+    background-image: url("../../../assets/images/common/background/background.svg");
+  }
+}
+
+.wrapper__controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wrapper__button {
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  background-color: transparent;
+  font-size: 1.6rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.2s;
+  filter: brightness(1);
+}
+
+.wrapper__button:hover,
+.wrapper__button:focus {
+  cursor: pointer;
+  outline: none;
+
+  @media (min-width: $noTablet) {
+    filter: brightness(1.1);
+  }
+}
+
+.wrapper__button:active {
+  filter: brightness(1.1);
+
+  @media (min-width: $noTablet) {
+    filter: brightness(1);
+  }
+}
+
+.wrapper__button_play {
+  position: relative;
+  margin-bottom: 1.64rem;
+  padding-right: 3.4rem;
+  padding-left: 3.4rem;
+  border: none;
+  color: var(--ololo-white);
+  font-size: 1.6rem;
+  box-shadow: 0 7px 11px #00000029;
+  border-radius: 2em;
+}
+
+.wrapper__button_play::before,
+.wrapper__button_play::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 2em;
+}
+
+.wrapper__button_play::before {
+  background-image: linear-gradient(180deg, #6BFFE2 0%, #63894E 100%, #63894E 100%);
+}
+
+.wrapper__button_play::after {
+  top: 2px;
+  background-image: linear-gradient(180deg, #51CEB5 0%, #079A7D 39%, #008C71 60%, #008C71 79%, #009C82 100%);
+}
+
+.wrapper__buttonText {
+  position: relative;
+  z-index: 1;
+}
+
+.wrapper__button_demo {
+  padding-top: 0.3rem;
+  padding-right: 2.1rem;
+  padding-bottom: 0.3rem;
+  padding-left: 2.1rem;
+  border: 2px solid var(--ololo-cyan);
+  border-radius: 2em;
+  background-color: transparent;
+  color: var(--ololo-cyan);
+  font-size: 1.42rem;
+}
+
+.wrapper__img {
+  width: 96%;
+  object-fit: contain;
+
+  @media (min-width: $noTablet) {
+    width: 60vmin;
+  }
+}

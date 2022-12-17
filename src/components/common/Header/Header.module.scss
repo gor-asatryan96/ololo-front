@@ -1,0 +1,86 @@
+@import '../../../assets/styles/media-variable';
+
+.header {
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  height: 2.57rem;
+  display: flex;
+  justify-content: center;
+  background-color: var(--ololo-wet-asphalt);
+  color: var(--ololo-white);
+  box-shadow: 0 3px 6px var(--ololo-black-16);
+
+  @media (min-width: $noTablet) {
+    height: 2.625rem;
+  }
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  @media(min-width: $noTablet) {
+    width: 82%;
+  }
+}
+
+.header__left {
+  display: flex;
+  align-items: stretch;
+}
+
+.header__right {
+  display: flex;
+  align-items: stretch;
+  width: 20rem;
+  justify-content: end;
+
+  @media(min-width: $noTablet) {
+    position: relative;
+  }
+}
+
+.header__mainButtons {
+  display: flex;
+  align-items: stretch;
+}
+
+.balanceOfMoney {
+  display: flex;
+  align-items: center;
+}
+
+.balanceOfMoney__container {
+  padding: 0.3rem 0.8rem;
+  border-radius: 1rem;
+  background-color: var(--ololo-black-2);
+  color: var(--ololo-gray-light);
+}
+
+.balanceOfMoney__currency {
+  color: var(--ololo-gold-dark);
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.header_howToPlay {
+  width: auto;
+  margin: 0;
+  padding: 0 1.5em;
+  border: none;
+  background-image: url("../../../assets/images/common/icons/information-button.svg");
+  background-position-x: left;
+  background-color: transparent;
+  color: var(--ololo-gray-very-light);
+}
+
+.menuButton {
+  position: relative;
+  z-index: 10;
+}

@@ -1,0 +1,60 @@
+.AdditionalInfo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-top: 0.937rem;
+  padding-bottom: 1.266rem;
+  border-radius: 0.375rem;
+  background-color: var(--ololo-background-history);
+}
+
+.AdditionalInfo__joinButton {
+  display: block;
+  width: 56.353%;
+  padding: 0.866rem;
+  margin: 2rem auto 0;
+  border: none;
+  border-radius: 0.66rem;
+  box-shadow: inset 0 0.1rem 0 0 var(--ololo-white-2);
+  background-color: var(--ololo-green-dark);
+  color: var(--ololo-white);
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.06rem;
+  cursor: pointer;
+}
+
+.AdditionalInfo__unjoinButton {
+  background-color: #506e8c;
+}
+
+.innerTournament {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.innerRows {
+  flex-grow: 1;
+}
+
+.close__btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 3.6rem;
+  height: 3.6rem;
+  background-color: transparent;
+  background-image: url('../../../assets/images/common/icons/closeLightBlue.svg');
+  background-size: 35% auto;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border: none;
+  transition: 0.2s;
+
+  &:hover {
+    cursor: pointer;
+    background-size: 45% auto;
+  }
+}

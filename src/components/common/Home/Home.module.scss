@@ -1,0 +1,104 @@
+@import '../../../assets/styles/media-variable';
+
+.wrapper {
+  display: grid;
+  grid-template-rows: 2.57rem calc(100% - 6.57rem) 4rem;
+  grid-template-areas:
+                  "header"
+                  "main"
+                  "poweredBy";
+  height: 100%;
+
+  @media (min-width: $noTablet) {
+    grid-template-rows: 2.625rem auto 4rem;
+  }
+}
+
+.header {
+  grid-area: header;
+}
+
+.poweredBy {
+  grid-area: poweredBy;
+}
+
+.main {
+  width: 100vw;
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--ololo-gray);
+  background-image: url("../../../assets/images/common/background/background-mobile.svg");
+  color: var(--ololo-white);
+
+  @media (min-width: $noTablet) {
+    width: 100%;
+    overflow: auto;
+  }
+}
+
+.main__inner {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  flex-grow: 1;
+  position: relative;
+}
+
+.jackpot {
+  display: block;
+  margin: 0 auto;
+  width: 100vw;
+  object-fit: contain;
+
+  @media (min-width: $noTablet) {
+    width: 41%;
+    margin-bottom: 1.093rem;
+  }
+}
+
+.gameTables {
+  margin-bottom: 1.1rem;
+}
+
+.gameTables__row {
+  position: relative;
+
+  &:not(:last-child) {
+    margin-bottom: 1.1rem;
+  }
+
+  @media (min-width: $noTablet) {
+    z-index: 2;
+
+    &:not(:last-child) {
+      margin-bottom: 4.2rem;
+    }
+  }
+}
+
+.gameTables__rowGaming {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  @media (min-width: $noTablet) {
+    min-width: 565px;
+  }
+}
+
+.backgroundImageMobile {
+  background-image: none;
+}
+
+.gameTables__rowGameCards {
+  opacity: 0.5;
+}
+
+.gameTables__container {
+  @media (min-width: $noTablet) {
+    width: 77%;
+    margin: 0 auto;
+  }
+}

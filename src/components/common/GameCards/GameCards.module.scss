@@ -1,0 +1,119 @@
+@import '../../../assets/styles/media-variable';
+
+.gameCardList {
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-start;
+  overflow: auto;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+
+  scrollbar-width: thin; // firefox's scrollbar
+  scrollbar-color: var(--ololo-gold) transparent; // firefox's scrollbar
+
+  .gameCardListWrapper {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  &::after {
+    content: "";
+    display: inline-flex;
+    width: 1px;
+    height: 1px;
+    flex-shrink: 0;
+  }
+
+  @media(min-width: $noTablet) {
+    &::after {
+      display: none;
+    }
+
+    &::-webkit-scrollbar {
+      width: 2px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+
+    &::-webkit-scrollbar {
+      width: 2px;
+      height: 2px;
+      background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-image: linear-gradient(90deg, transparent, transparent, var(--ololo-gold), transparent, transparent);
+      background-color: transparent;
+    }
+  }
+}
+
+.gameTable__emptyTable {
+  position: relative;
+  margin: 0 auto;
+  margin-top: 2.8rem;
+  width: max-content;
+  padding-bottom: 5.133rem;
+  color: rgb(229, 172, 96);
+  font-size: 1.333rem;
+  font-weight: bold;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0.766rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    width: 1.8rem;
+    height: 2.133rem;
+    background-image: url("../../../assets/images/common/icons/arrow.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    animation-name: downUp;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+  }
+}
+
+@keyframes downUp {
+  0% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(20%);
+  }
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.gameTable__emptyTablePlay {
+  padding-top: 5.133rem;
+  padding-bottom: unset;
+  margin: 0 auto 2.8rem;
+  &::before {
+    transform: translateX(-50%) scaleY(-1);
+    top: 0.766rem;
+    bottom: unset;
+    animation-name: upDown;
+  }
+}
+
+@keyframes upDown {
+  0% {
+    transform: translateX(-50%) translateY(0) scaleY(-1);
+  }
+  50% {
+    transform: translateX(-50%) translateY(20%) scaleY(-1);
+  }
+  100% {
+    transform: translateX(-50%) translateY(0) scaleY(-1);
+  }
+}

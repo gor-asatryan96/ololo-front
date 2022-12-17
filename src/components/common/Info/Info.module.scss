@@ -1,0 +1,26 @@
+.info {
+  padding: 0 2.28rem;
+  color: var(--ololo-white-9);
+}
+
+
+.info__row {
+  display: flex;
+  justify-content: space-between;
+
+  &:not(:last-child) {
+    margin-bottom: 1.1rem;
+  }
+}
+
+.info__cell_gold {
+  color: var(--ololo-gold-special-9);
+}
+
+.info__cell_green {
+  color: rgba(84, 151, 130, 0.9);
+}
+
+.info__cell_white {
+  color: var(--ololo-white-7);
+}

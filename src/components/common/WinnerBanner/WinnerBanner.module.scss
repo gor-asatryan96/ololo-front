@@ -1,0 +1,246 @@
+@import '../../../assets/styles/media-variable';
+
+.winnerBanner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 0.892rem;
+  background-color: var(--ololo-cardBackground);
+  display: grid;
+  grid-template-rows: 3rem auto;
+  opacity: 0;
+  transition: .3s;
+  visibility: hidden;
+  z-index: 2;
+
+  @media (min-width: $noTablet) {
+    z-index: 2;
+  }
+}
+
+.winnerBanner_active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.winnerBanner__top {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  padding: 0.5rem;
+}
+
+.winnerBanner__gameInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 40%;
+  border: 1px solid var(--ololo-thirdColor);
+  border-radius: 1.053rem;
+  background-color: var(--ololo-secondColor);
+  font-size: 1rem;
+}
+
+.winnerBanner__betAmount,
+.winnerBanner__time {
+  width: 50%;
+  text-align: center;
+}
+
+.winnerBanner__betAmount {
+  position: relative;
+  color: var(--ololo-gold-special);
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    bottom: 0;
+    width: 0.09rem;
+    border-radius: 1rem;
+    background-color: var(--ololo-green-dark);
+    transform: translateX(-50%);
+    opacity: 0.7;
+  }
+}
+
+.winnerBanner__time {
+  opacity: 0.5;
+}
+
+.winnerBanner__container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.winnerBanner__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 81.82%;
+  padding-top: 2.307rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  @media (min-width: $noTablet) {
+    width: 41%;
+  }
+}
+
+.winnerBanner__content_win {
+  background-image: url("../../../assets/images/common/background/winnerBackground.png");
+}
+
+.winnerBanner__img {
+  width: 3.35rem;
+  height: 3.35rem;
+  margin-bottom: 1rem;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 0.110rem solid transparent;
+}
+
+.winnerBanner__img_win {
+  border-color: var(--ololo-gold);
+}
+
+.winnerBanner__img_lost {
+  border-color: var(--ololo-silver);
+}
+
+.winnerBanner__text {
+  color: var(--ololo-buttonPlaceBet-color);
+  font-size: 2.857rem;
+  text-shadow: 0 0.4rem 0.6rem var(--ololo-black-16);
+  font-weight: bold;
+  text-transform: uppercase;
+
+  @media (min-width: $noTablet) {
+    font-size: 1.333rem;
+  }
+}
+
+.winnerBanner__text_lost {
+  margin-bottom: 0.5rem;
+  color: rgb(167, 189, 197);
+  font-size: 1.5rem;
+  text-transform: unset;
+}
+//rgb(214, 233, 242)
+.winnerBanner__amount {
+  color: var(--ololo-gold);
+  font-size: 2.857rem;
+  font-weight: bold;
+  text-shadow: 0 0.4rem 0.6rem var(--ololo-black-16);
+
+  @media (min-width: $noTablet) {
+    font-size: 1.333rem;
+  }
+}
+
+.winnerBanner__tournamentContainerImg {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 0.678rem;
+  width: 3.357rem;
+  height: 3.357rem;
+  border-radius: 50%;
+  border: 0.2rem solid var(--ololo-gold);
+}
+
+.winnerBanner__tournamentContainerTitle {
+  margin-bottom: 0.357rem;
+  color: rgb(85, 173, 145);
+  font-size: 1.785rem;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0 0.107rem 0.214rem var(--ololo-black-16);
+
+  @media (min-width: $noTablet) {
+    font-size: 1.185rem;
+
+    & {
+      br {
+        display: none;
+      }
+    }
+  }
+}
+
+.winnerBanner__tournamentContainerRow {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+
+  // &:not(:last-child) {
+  //   margin-bottom: 0.821rem;
+  // }
+}
+
+.winnerBanner__tournamentContainerCell {
+  &:first-child {
+    color: #dde9eb;
+  }
+  &:last-child {
+    font-size: 1.5rem;
+    color: #dde9eb;
+  }
+}
+
+.winnerBanner__opponent {
+  display: flex;
+  align-items: center;
+  font-size: 0.785rem;
+}
+
+.winnerBanner__opponentImgContainer {
+  margin-right: 0.28rem;
+}
+
+.winnerBanner__opponentImg {
+  width: 2.142rem;
+  height: 2.142rem;
+  border: 0.1rem solid var(--ololo-white-5);
+  border-radius: 50%;
+}
+
+.winnerBanner__opponentInfoRow {
+  color: var(--ololo-gold);
+
+  &:first-child {
+    color: var(--ololo-white-5);
+  }
+}
+
+.winnerBanner__tournamentTitle {
+  margin-bottom: 0.285rem;
+
+  @media (min-width: $noTablet) {
+    padding-top: 0;
+    font-size: 1.185rem;
+  }
+}
+
+.winnerBanner__tournamentPrize {
+  margin: 0 auto;
+  color: #fff;
+  text-align: center;
+}
+
+.winnerBanner__tournamentPrizeText {
+  color: rgba(202, 219, 222, 0.8);
+}
+
+.notFinalWinnerPrize{
+  padding-left: 10px;
+  color: var(--ololo-gold-special);
+}

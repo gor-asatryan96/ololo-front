@@ -1,0 +1,91 @@
+@import '../../../assets/styles/media-variable';
+
+.gamingTournament {
+  @media (min-width: $noTablet) {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 0 0.533rem;
+    padding-bottom: 0.933rem;
+    background-color: #2c3844;
+    border-radius: 0.375rem;
+  }
+}
+
+.gamingTournament__top {
+  @media (min-width: $noTablet) {
+    margin: 0.428rem 0;
+    order: -1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.gamingTournamentTitle {
+  margin: 0;
+
+  @media (min-width: $noTablet) {
+    padding: 0;
+  }
+}
+
+.gamingTournament__info {
+  font-size: 1.285rem;
+
+  @media (min-width: $noTablet) {
+    margin-top: 0.533rem;
+    order: 2;
+  }
+}
+
+.gamingTournament__row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2.25rem;
+
+  &:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+}
+
+.gamingTournament__cell {
+  @media (min-width: $noTablet) {
+    &:first-child {
+      color: var(--ololo-white-8);
+    }
+  }
+}
+
+.gamingTournament__cell_betAmount {
+  color: rgba(236, 183, 109, 0.9);
+}
+
+.gamingTournament__cell_winAmount {
+  color: rgba(84, 151, 130, 0.9);
+}
+
+.gamingTournament__moreInfo {
+  display: block;
+  margin: 0 auto;
+  margin-top: 1rem;
+  margin-bottom: 0.3rem;
+  padding: 0.392rem 1.607rem;
+  border: none;
+  border-radius: 1.321rem;
+  background-color: #4e5974;
+  color: var(--ololo-white-7);
+  font-size: 1.214rem;
+  font-weight: bold;
+  font-family: 'Roboto', 'sans-serif';
+  box-shadow: inset 0 0.09rem 0 0 var(--ololo-white-4);
+  cursor: pointer;
+
+  @media (min-width: $noTablet) {
+    margin: 0;
+    padding: 0.533rem 1.333rem;
+    border-radius: 1.5rem;
+    background-color: var(--ololo-green-dark);
+    font-size: 1rem;
+  }
+}

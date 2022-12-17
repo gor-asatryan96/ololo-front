@@ -1,0 +1,227 @@
+@import '../../../assets/styles/media-variable';
+
+.additionalInfo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transform: scale(0.01);
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  width: 100%;
+  height: calc(var(--vh, 1vh) * 100);
+  padding: 1rem;
+  z-index: 20;
+  background-color: var(--ololo-black-35);
+  color: var(--ololo-white-6);
+  font-size: 1.04rem;
+  transition: 0.2s;
+  box-shadow: 0 0.214rem 0.428rem var(--ololo-black-16);
+
+  @media (min-width: $noTablet) {
+    align-items: center;
+  }
+}
+
+.additionalInfo_active {
+  transform: scale(1);
+  opacity: 1;
+}
+
+
+.additionalInfo__container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding-top: 1.07rem;
+  border-radius: 0.28rem;
+  background-color: var(--ololo-background-tournament);
+
+  @media (min-width: $noTablet) {
+    width: 38%;
+    height: 48.05%
+  }
+}
+
+.additionalInfo__main {
+  height: 100%;
+  overflow: auto;
+}
+
+.additionalInfo__title {
+  color: var(--ololo-gold);
+  text-align: center;
+  font-size: 1.2rem;
+
+  @media (min-width: $noTablet) {
+    margin-bottom: 1.875rem;
+  }
+}
+
+.additionalInfo__gridRow {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.additionalInfo__gridColumn {
+  padding: 1.14rem;
+  width: 100%;
+
+  @media (min-width: $noTablet) {
+    width: 50%;
+
+    display: flex;
+    flex-direction: column;
+
+    &:first-child {
+      border-right: 1px solid var(--ololo-border-right);
+    }
+
+    &:last-child {
+      border-left: 1px solid var(--ololo-border-left);
+    }
+  }
+}
+
+.additionalInfo__gridColumnTitle {
+  margin-bottom: 0.56rem;
+}
+
+.additionalInfo__gridColumnTitle_info {
+  color: var(--ololo-color-tournament-info);
+}
+
+.additionalInfo__gridColumnTitle_winningPlace {
+  color: var(--ololo-white-9);
+}
+
+.additionalInfo__pseudoRow {
+  display: flex;
+  justify-content: space-between;
+
+  &:not(:last-child) {
+    margin-bottom: 0.46rem;
+  }
+}
+
+.additionalInfo__pseudoRow_status {
+  .additionalInfo__pseudoCell {
+    &:last-child {
+      color: var(--ololo-white-7);
+    }
+  }
+}
+
+.additionalInfo__pseudoRow_buyIn {
+  .additionalInfo__pseudoCell {
+    &:last-child {
+      color: var(--ololo-gold-special);
+    }
+  }
+}
+
+.additionalInfo__pseudoRow_prize {
+  .additionalInfo__pseudoCell {
+    &:last-child {
+      color: var(--ololo-green);
+    }
+  }
+}
+
+.additionalInfo__pseudoRow_startDay {
+  .additionalInfo__pseudoCell {
+    &:last-child {
+      color: var(--ololo-white-7);
+    }
+  }
+}
+
+.additionalInfo__pseudoRow_winningPlaces {
+  .additionalInfo__pseudoCell {
+    font-weight: bold;
+
+    &:nth-child(1) {
+      width: 30.7%;
+      color: var(--ololo-color-light-blue);
+    }
+
+    &:nth-child(2) {
+      width: 30.26%;
+      color: var(--ololo-color-light-blue-6);
+      text-align: center;
+    }
+
+    &:nth-child(3) {
+      width: 39.04%;
+      color: var(--ololo-gold-special);
+      text-align: right;
+    }
+  }
+}
+
+
+.additionalInfo__statusPlace {
+  color: var(--ololo-color-tournament-info);
+}
+
+.additionalInfo__pseudoCell_isPlayerConnect {
+  display: flex;
+  align-items: center;
+}
+
+.additionalInfo__closeButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  border: none;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: auto 44%;
+  background-image: url("../../../assets/images/common/icons/closeLightBlue.svg");
+  background-color: transparent;
+}
+
+.additionalInfo__playerCount {
+  width: 100%;
+  margin: 0.5rem 0;
+  text-align: center;
+}
+
+.additionalInfo__isPlayerConnect {
+  margin-right: 0.47rem;
+  color: var(--ololo-white);
+}
+
+.additionalInfo__playersConnected {
+  color: var(--ololo-white-7);
+}
+
+.additionalInfo__seePlayersButton {
+  position: relative;
+  filter: drop-shadow(0 0.2rem 0.2rem var(--ololo-black-16));
+  width: 1.8rem;
+  height: 1.8rem;
+  padding: 0;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--ololo-cyan-5);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: 55.55% auto;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url('../../../assets/images/common/icons/eye.svg');
+    opacity: 0.7;
+  }
+}

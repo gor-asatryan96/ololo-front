@@ -1,0 +1,92 @@
+@import "./media-variable";
+
+
+html {
+  box-sizing: border-box;
+  font-size: calc(12px + 0.55vw);
+  overflow: hidden;
+
+  @media (min-width: $noTablet) {
+    font-size: 13px;
+  }
+
+  @media (min-width: $small-laptop) {
+    font-size: 16px;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Sarala', sans-serif, Arial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  height: 100%;
+}
+
+.App {
+  height: 100vh;
+}
+
+.App {
+  //height: 100%;
+  /* Use vh as a fallback for browsers that do not support Custom Properties */
+  height: calc(var(--vh, 1vh) * 100);
+  overflow: auto;
+}
+
+.AppDesktop {
+  height: 100vh;
+}
+
+.visually__hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+// https://www.npmjs.com/package/focus-visible
+.js-focus-visible :focus:not(.focus-visible) {
+  outline: none;
+}
+
+.fullscreen {
+  height: 100%;
+}
+
+@media(min-width: $noTablet) {
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar {
+    width: 2px;
+    height: 2px;
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--ololo-scroll-thumb);
+  }
+}

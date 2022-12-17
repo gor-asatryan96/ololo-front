@@ -1,0 +1,86 @@
+@import '../../../assets/styles/media-variable';
+
+.playGame {
+  display: flex;
+  flex-direction: column;
+}
+
+.playGame__tabs {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+
+.playGame__tabButton {
+  margin: 0;
+  padding: 0;
+  opacity: 0.5;
+  border: none;
+  background-color: transparent;
+  color: var(--ololo-gold);
+  font-size: 0.928rem;
+  text-transform: uppercase;
+  font-weight: bold;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.playGame__tabButton_active {
+  opacity: 1;
+}
+
+.playGame__tabButtonText {
+  display: flex;
+  align-items: center;
+  padding: 1.46rem 1.25rem;
+  transition: 0.2s;
+
+  &::before {
+    content: "";
+    width: 2.535rem;
+    height: 1.571rem;
+    margin-right: 0.25rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+}
+
+.playGame__tabButtonText_waitingTable {
+  &::before {
+    background-image: url('../../../assets/images/common/icons/waitingTables.svg')
+  }
+}
+
+.playGame__tabButtonText_emptyTables {
+  &::before {
+    background-image: url('../../../assets/images/common/icons/emptyTables.svg')
+  }
+}
+
+.playGame__cards {
+  padding-left: 0.642rem;
+  margin-bottom: 1.214rem;
+
+  @media (min-width: $noTablet) {
+    position: relative;
+  }
+}
+
+.playGame__gamingCard {
+  order: -1;
+  @media (min-width: $noTablet) {
+    width: 49%;
+    margin: 0 auto;
+    order: -1;
+
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+}

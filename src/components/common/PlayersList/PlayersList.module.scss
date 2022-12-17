@@ -1,0 +1,54 @@
+@import '../../../assets/styles/media-variable';
+
+.playerList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.playerItem {
+  display: flex;
+  padding: 0.607rem 0.714rem;
+
+  &:nth-child(2n) {
+    background-color: var(--ololo-white-06);
+  }
+
+  &:nth-child(2n + 1) {
+    background-color: var(--ololo-white-03);
+  }
+}
+
+.playerItem_header {
+  &:nth-child(n) {
+    background-color: var(--ololo-black-16);
+
+    @media (min-width: $noTablet) {
+      background-color: transparent;
+      font-weight: normal;
+    }
+  }
+
+  .playerItem__cell {
+    color: rgba(219, 219, 219, 0.8);
+  }
+}
+
+.playerItem__cell {
+  color: rgb(209, 224, 238);
+}
+
+.playerItem__cell_number {
+  width: 36%;
+  color: rgb(153, 187, 220);
+}
+
+.playerItem__cell_playerId {
+  width: 34%;
+}
+
+.playerItem__cell_status {
+  width: 30%;
+}

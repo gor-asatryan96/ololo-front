@@ -1,0 +1,54 @@
+@import '../../../assets/styles/media-variable';
+
+.gamingCard__hand {
+  width: 45%;
+  background-size: auto 1600%;
+  background-position: 0 100%;
+  animation: handMove 1s steps(15);
+  animation-fill-mode: forwards;
+
+
+  &::before {
+    content: "";
+    display: block;
+    padding-top: 93.46405%;
+  }
+
+  @media (min-width: $noTablet) {
+    width: 24%;
+  }
+}
+
+.gamingCard__hand_reflect {
+  transform: scaleX(-1);
+}
+
+.gamingCard__hand_paper {
+  background-image: url("../../../assets/images/common/animation/paper-small.png");
+}
+
+.gamingCard__hand_scissors {
+  background-image: url("../../../assets/images/common/animation/scissors-small.png");
+}
+
+.gamingCard__hand_rock {
+  background-image: url("../../../assets/images/common/animation/rock-small.png");
+}
+
+@keyframes handMove {
+  100% {
+    background-position: 0 1600%;
+  }
+}
+
+.gamingCard__hand_infinite {
+  background-image: url("../../../assets/images/common/animation/rock-small.png");
+  animation: infiniteMove 1s steps(15) infinite;
+  animation-fill-mode: forwards;
+}
+
+@keyframes infiniteMove {
+  100% {
+    background-position: 0 1600%;
+  }
+}

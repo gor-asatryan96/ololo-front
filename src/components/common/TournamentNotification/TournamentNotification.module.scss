@@ -1,0 +1,28 @@
+
+@keyframes notification {
+  0% {transform: scale(0);}
+  50% {transform: scale(1);}
+  100% {transform: scale(0);}
+}
+
+.round {
+  --size: 1rem;
+  position: absolute;
+  top: 10%;
+  left: 90%;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  background-color: var(--ololo-gold);
+  animation: notification 1s ease-in-out infinite;
+
+  &__notification {
+    position: absolute;
+    left: 25%;
+    color: var(--ololo-wet-asphalt);
+    font-size: 0.7rem;
+    font-weight: bold;
+    transform: translate(10%, 20%);
+    cursor: default;
+  }
+}

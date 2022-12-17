@@ -1,0 +1,65 @@
+@import '../../../assets/styles/media-variable';
+
+.error {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 12;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: calc(var(--vh, 1vh) * 100);
+  background-color: var(--ololo-black-35);
+}
+
+.error__container {
+  position: relative;
+  width: calc(100% - 0.57rem);
+  padding: 3.423rem 3.857rem;
+  border-radius: 0.28rem;
+  background-color: var(--ololo-tournaments-ticket-two);
+  color: var(--ololo-silver);
+  font-size: 1.5rem;
+  z-index: 13;
+
+  @media (min-width: $noTablet) {
+    min-width: 416px;
+    width: 28.8%;
+    font-size: 1.25rem;
+  }
+}
+
+.error__description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.error__image {
+  width: 16.71%;
+  margin-bottom: 1.57rem;
+  min-width: 60px;
+}
+
+.error__img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.error__buttonClose {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2.14rem;
+  height: 2.14rem;
+  padding: 0;
+  border: none;
+  background-image: url("../../../assets/images/common/icons/closeError.svg");
+  background-size: 53.3% auto;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: transparent;
+  cursor: pointer;
+}

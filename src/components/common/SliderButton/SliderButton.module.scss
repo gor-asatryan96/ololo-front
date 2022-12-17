@@ -1,0 +1,43 @@
+// parent must have style 'position: relative'
+// only tablet width >= 1024px
+
+.gameTable__button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  width: 1.168rem;
+  padding: 0;
+  background-color: transparent;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  transition: 0.2s;
+  filter: brightness(100%);
+
+  &::before {
+    content: "";
+    display: block;
+    padding-top: 170.267%;
+  }
+
+  &:hover {
+    cursor: pointer;
+    transform: translateY(-50%) scale(1.1);
+  }
+
+  &:active {
+    filter: brightness(80%);
+    transform: translateY(-50%) scale(1);
+  }
+}
+
+.gameTable__button_prev {
+  right: calc(100% + 0.687rem);
+  background-image: url('../../../assets/images/common/icons/leftArrow.svg');
+}
+
+.gameTable__button_next {
+  left: calc(100% + 0.687rem);
+  background-image: url('../../../assets/images/common/icons/rightArrow.svg');
+}

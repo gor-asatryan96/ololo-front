@@ -1,0 +1,21 @@
+@import '../../../assets/styles/media-variable';
+
+.poweredBy {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--ololo-gray-dark);
+  color: var(--ololo-white);
+}
+
+
+.poweredBy__logo {
+  height: 68%;
+  object-fit: contain;
+
+  @media (min-width: $noTablet) {
+    width: auto;
+    height: 68%;
+  }
+}

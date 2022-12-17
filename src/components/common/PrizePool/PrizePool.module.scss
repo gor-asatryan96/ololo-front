@@ -1,0 +1,46 @@
+.prizePool {
+  font-weight: bold;
+}
+
+.prizePool__title {
+  padding: 0.5rem 0.75rem;
+  color: rgba(219, 219, 219, 0.9);
+  font-size: 1.214rem;
+}
+
+.prizePool__list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 1rem;
+}
+
+.prizePool__item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.642rem 0.714rem;
+  background-color: var(--ololo-white-1);
+
+  &:first-child {
+    background-color: rgba(183, 248, 198, 0.1);
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 0.357rem;
+  }
+}
+
+.prizePool__cell_position {
+  width: 36%;
+  color: rgb(153, 187, 220);
+}
+
+.prizePool__cell_percent {
+  width: 32%;
+  color: rgb(209, 224, 238);
+}
+
+.prizePool__cell_winnerAmount {
+  width: 32%;
+  color: rgb(227, 170, 94);
+}

@@ -1,0 +1,121 @@
+@import '../../../../assets/styles/media-variable';
+
+.history {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+
+.history__column {
+  display: flex;
+  justify-content: flex-start;
+  padding: 0.416rem 1.075rem;
+  font-size: 0.785rem;
+  font-weight: bold;
+
+  @media (min-width: $noTablet) {
+    font-size: 1rem;
+  }
+}
+
+.history__column_header {
+  color: var(--ololo-gray-light-text);
+  font-size: 0.857rem;
+
+  @media (min-width: $noTablet) {
+    flex-shrink: 0;
+    font-size: unset;
+  }
+}
+
+.history__columns {
+  background-color: var(--ololo-gray);
+
+  .history__column {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+
+    &:not(:last-child) {
+      margin-bottom: 0.35rem;
+    }
+
+    &:nth-child(2n) {
+      background-color: var(--ololo-tournaments-ticket-one);
+    }
+
+    &:nth-child(2n + 1) {
+      background-color: var(--ololo-tournaments-ticket-two);
+    }
+  }
+
+  .history__cell_date,
+  .history__cell_duration {
+    color: var(--ololo-silver);
+  }
+
+  .history__cell_date {
+    position: relative;
+    display: flex;
+    align-items: center;
+    opacity: 0.8;
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 15%;
+      display: inline-block;
+      width: 0.03rem;
+      height: 100%;
+      background-color: var(--ololo-silver);
+    }
+  }
+
+  .history__cell_bet {
+    color: var(--ololo-gold);
+    opacity: 0.8;
+  }
+
+  .history__cell_status {
+    color: var(--ololo-silver);
+  }
+}
+
+.history__column_loss {
+  .history__cell {
+    opacity: 0.5;
+  }
+
+  .greenText {
+    color: var(--ololo-tournaments-green-light);
+  }
+}
+
+
+.history__cell_date {
+  width: 22.72%;
+
+  @media (min-width: $noTablet) {
+    width: 18%;
+  }
+}
+
+.history__cell_duration {
+  width: 26.36%;
+
+  @media (min-width: $noTablet) {
+    width: 31.04%;
+  }
+}
+
+.history__cell_bet {
+  width: 21.06%;
+}
+
+.history__cell_status {
+  width: 29.86%;
+}
+
+.greenText {
+  margin-left: 0.4rem;
+  color: var(--ololo-green);
+}

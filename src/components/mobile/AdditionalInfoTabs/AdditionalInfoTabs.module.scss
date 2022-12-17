@@ -1,0 +1,46 @@
+.additionalTabList {
+  list-style-type: none;
+  margin: 0;
+  margin-bottom: 1.3rem;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.additionalTabItemButton {
+  padding: 0 1.42rem;
+  border: none;
+  background-color: transparent;
+  color: var(--ololo-light-blue);
+  font-size: 1.285rem;
+  font-weight: bold;
+}
+
+.additionalTabItemButton__span {
+  position: relative;
+  display: block;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: calc(100% + 0.1rem);
+    left: 0;
+    display: block;
+    height: 0.214rem;
+    width: 0;
+    background-color: var(--ololo-light-blue);
+    transition: 0.2s;
+  }
+}
+
+.additionalTabItemButton_active {
+  color: var(--ololo-white);
+
+  .additionalTabItemButton__span {
+    &::before {
+      width: 100%;
+    }
+  }
+}
+
+

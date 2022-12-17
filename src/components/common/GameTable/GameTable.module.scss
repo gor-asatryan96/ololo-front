@@ -1,0 +1,62 @@
+@import '../../../assets/styles/media-variable';
+
+.gameTable {
+  display: flex;
+  justify-content: center;
+
+  &:not(:last-child) {
+    margin-bottom: 1.75rem;
+  }
+}
+
+.gameTable__container {
+  width: 100%;
+  padding-left: 0.64rem;
+
+  @media (min-width: $noTablet) {
+    width: 77%;
+    padding-left: 0;
+  }
+}
+
+.gameTable__title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.46rem;
+  color: var(--ololo-gold);
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: bold;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 2.875rem;
+    height: 1.75rem;
+    margin-right: 0.418rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+
+  @media (min-width: $noTablet) {
+    justify-content: center;
+    margin-bottom: 0.656rem;
+  }
+}
+
+.gameTable__title_waiting {
+  &::before {
+    background-image: url("../../../assets/images/common/icons/waitingTables.svg")
+  }
+}
+
+.gameTable__title_empty {
+  &::before {
+    background-image: url("../../../assets/images/common/icons/emptyTables.svg")
+  }
+}
+
+.gameTable__tableContainer {
+  position: relative;
+}

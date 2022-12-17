@@ -1,0 +1,19 @@
+<svg id="Group_1010" data-name="Group 1010" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="23.04" height="17.95" viewBox="0 0 23.04 17.95">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#c47f2a"/>
+      <stop offset="0.89" stop-color="#fecf8a"/>
+      <stop offset="1" stop-color="#ffdfb1"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-5" x1="0.5" y1="0" x2="0.5" y2="1.001" xlink:href="#linear-gradient"/>
+  </defs>
+  <path id="Path_2542" data-name="Path 2542" d="M13.64,1.27V7.08L8.48,1.92A8.624,8.624,0,0,1,13.02.66.615.615,0,0,1,13.64,1.27Z" fill="url(#linear-gradient)"/>
+  <path id="Path_2543" data-name="Path 2543" d="M6.83,3.21l6.81,6.8v6.92a.615.615,0,0,1-.62.61,8.691,8.691,0,0,1-7.29-3.92H2.43A2.407,2.407,0,0,1,0,11.25V6.95A2.409,2.409,0,0,1,2.43,4.57h3.3A8.5,8.5,0,0,1,6.83,3.21Z" fill="url(#linear-gradient)"/>
+  <path id="Path_2544" data-name="Path 2544" d="M15.79,12.16l.86.86a5.378,5.378,0,0,1-.91.8.656.656,0,0,1-.35.11.611.611,0,0,1-.5-.26.618.618,0,0,1,.15-.85A4.668,4.668,0,0,0,15.79,12.16Z" fill="url(#linear-gradient)"/>
+  <path id="Path_2545" data-name="Path 2545" d="M17.78,11.22l-.95-.95a4.512,4.512,0,0,0-1.79-4.88.6.6,0,0,1-.15-.85.01.01,0,0,1,.01-.01.6.6,0,0,1,.83-.14h.01A5.558,5.558,0,0,1,17.15,5.8,5.743,5.743,0,0,1,17.78,11.22Z" fill="url(#linear-gradient)"/>
+  <path id="Path_2546" data-name="Path 2546" d="M18.24,14.61l.87.87a8.56,8.56,0,0,1-1.04.85.614.614,0,0,1-.83-.15.606.606,0,0,1,.13-.85A6.652,6.652,0,0,0,18.24,14.61Z" fill="url(#linear-gradient-5)"/>
+  <path id="Path_2547" data-name="Path 2547" d="M20.44,13.88l-.89-.89A7.594,7.594,0,0,0,17.37,2.87a.611.611,0,0,1,.7-1,8.924,8.924,0,0,1,2.21,2.21A8.8,8.8,0,0,1,20.44,13.88Z" fill="url(#linear-gradient-5)"/>
+  <g id="Group_1009" data-name="Group 1009">
+    <path id="Path_2548" data-name="Path 2548" d="M23.04,17.41a.565.565,0,0,1-.16.38.529.529,0,0,1-.38.16.546.546,0,0,1-.38-.16l-2.66-2.66-2.49-2.49-.86-.86L13.64,9.31,7.2,2.87,5.24.91a.556.556,0,0,1,0-.76A.578.578,0,0,1,5.63,0a.573.573,0,0,1,.38.15l7.63,7.63,3.01,3.02.91.92,1.71,1.7v.01l.88.87,2.73,2.73A.565.565,0,0,1,23.04,17.41Z" fill="#e9b267"/>
+  </g>
+</svg>

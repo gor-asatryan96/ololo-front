@@ -1,0 +1,72 @@
+@import '../../../assets/styles/media-variable';
+
+.tournamentsMain {
+  overflow: auto;
+}
+
+.tournaments {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: var(--ololo-gray);
+
+  @media (min-width: $noTablet) {
+    padding: 0.4375rem;
+    background-color: var(--ololo-tournaments-background-items);
+    font-size: 1.125rem;
+  }
+}
+
+.tournament {
+  transition: 0.2s;
+
+  &:not(:last-child) {
+    margin-bottom: 0.416rem;
+  }
+
+  &:nth-child(2n) {
+    background-color: var(--ololo-tournaments-ticket-one);
+  }
+
+  &:nth-child(2n + 1) {
+    background-color: var(--ololo-tournaments-ticket-two);
+  }
+
+  @media (min-width: $noTablet) {
+    border-radius: 0.375rem;
+  }
+}
+
+.tournament_active {
+  @media (min-width: $noTablet) {
+    &:nth-child(n) {
+      background-color: rgba(97, 147, 153, 0.5);
+    }
+  }
+}
+
+.tournamentsMain_horizontal {
+  margin-top: 1.928rem;
+  margin-bottom: 1rem;
+  padding-left: 0.178rem;
+  flex-shrink: 0;
+
+  .tournaments {
+    display: flex;
+  }
+
+  .tournament {
+    border-radius: 0.678rem;
+
+    &:not(:last-child) {
+      margin-right: 0.642rem;
+      margin-bottom: 0;
+    }
+  }
+
+  .tournament_active {
+    &:nth-child(n) {
+      background-color: rgba(97, 147, 153, 0.5);
+    }
+  }
+}

@@ -1,0 +1,66 @@
+.additionalInfo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding-bottom: 4rem;
+  background-color: #262c3b;
+  overflow: hidden;
+}
+
+.additionalInfo__title {
+  padding-top: 0.8rem;
+  padding-right: 3rem;
+  padding-left: 3rem;
+}
+
+.additionalInfo__tabsContent {
+  overflow: auto;
+  flex-grow: 1;
+}
+
+.additionalInfo__closeTournaments {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2.857rem;
+  height: 2.857rem;
+  border: none;
+  background-color: transparent;
+  background-image: url("../../../assets/images/common/icons/close.svg");
+  background-size: 50% auto;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.additionalInfo__joinButtonContainer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 4rem;
+  padding: 0.5rem;
+  padding-top: 0.1rem;
+  box-shadow: 0 -0.5rem 0.2rem 0.2rem #262c3b;
+}
+
+.additionalInfo__joinButton {
+  flex-grow: 1;
+  width: 69.333%;
+  border: none;
+  border-radius: 1.071rem;
+  background-color: rgb(70, 127, 109);
+  color: var(--ololo-white);
+  font-size: 1.428rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  box-shadow: inset 0 0.09rem 0 0 var(--ololo-white-4);
+}
+
+.AdditionalInfo__unjoinButton {
+  background-color: #506e8c;
+}

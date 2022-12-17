@@ -1,0 +1,135 @@
+@import '../../../../assets/styles/media-variable';
+
+.historyTournaments {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  padding-top: 1.7rem;
+  font-size: 0.857rem;
+
+  @media (min-width: $noTablet) {
+    font-size: 1rem;
+  }
+}
+
+.historyTournaments__columns {
+  background-color: var(--ololo-gray);
+}
+
+.historyTournaments__column {
+  display: flex;
+  align-items: stretch;
+  padding: 0.642rem 0.535rem;
+  color: var(--ololo-silver);
+
+  &:nth-child(2n) {
+    background-color: var(--ololo-tournaments-ticket-one);
+  }
+
+  &:nth-child(2n + 1) {
+    background-color: var(--ololo-tournaments-ticket-two);
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 0.357rem;
+  }
+
+  @media (min-width: $noTablet) {
+    padding: 0.642rem 1rem;
+  }
+}
+
+.historyTournaments__row_1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 85%;
+
+  @media (min-width: $noTablet) {
+    width: 92%;
+  }
+}
+
+.historyTournaments__row_2 {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 15%;
+
+  @media (min-width: $noTablet) {
+    width: 8%;
+  }
+}
+
+.historyTournaments__cell {
+  font-weight: bold;
+}
+
+.historyTournaments__pseudoRow {
+  display: flex;
+  align-items: flex-end;
+
+  &:not(:first-child) {
+    margin-top: 0.428rem;
+  }
+}
+
+.historyTournaments__cell_1 {
+  width: 70%;
+}
+
+.historyTournaments__cell_2 {
+  display: flex;
+  width: 30%;
+}
+
+.historyTournaments__cell_datePlayers {
+  font-size: 0.785rem;
+
+  @media (min-width: $noTablet) {
+    font-size: 1rem;
+  }
+}
+
+.historyTournaments__button {
+  display: flex;
+  width: 74.98%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background-size: 24.5% auto;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url("../../../../assets/images/common/icons/info.svg");
+  background-color: var(--ololo-tournaments-button);
+  box-shadow: inset 0 0.09rem 0 0 var(--ololo-white-4);
+  filter: drop-shadow(0 3px 6px var(--ololo-black-16));
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    padding-top: 100%;
+  }
+}
+
+.historyTournaments__gameType {
+  color: var(--ololo-gold);
+}
+
+
+
+.historyTournaments__betAmountSize {
+  color: var(--ololo-gold);
+}
+
+
+.historyTournaments__winAmountSize {
+  color: var(--ololo-green);
+}
+
+.historyTournaments__date,
+.historyTournaments__playerPosition {
+  opacity: 0.6;
+}
+

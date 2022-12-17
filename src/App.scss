@@ -1,0 +1,43 @@
+@import "./assets/styles/media-variable";
+
+.preload {
+  background-image:
+    url("assets/images/common/icons/fullScreenReverse.svg"),
+    url("assets/images/common/icons/close.svg"),
+    url("assets/images/common/icons/sound-on.svg"),
+    url("assets/images/common/icons/sound-off.svg"),
+    url("assets/images/common/background/ololo-jackpot@2x.png"),
+    url("assets/images/common/animation/rock.png"),
+    url("assets/images/common/animation/scissors.png"),
+    url("assets/images/common/animation/paper.png"),
+    url("assets/images/common/icons/errorMobile.svg"),
+    url("assets/images/common/icons/errorDesktop.svg"),
+    url("assets/images/common/avatars/1.svg"),
+    url("assets/images/common/avatars/2.svg"),
+    url("assets/images/common/avatars/3.svg"),
+    url("assets/images/common/avatars/4.svg"),
+    url("assets/images/common/avatars/5.svg"),
+    url("assets/images/common/avatars/6.svg"),
+    url("assets/images/common/avatars/7.svg"),
+    url("assets/images/common/avatars/8.svg"),
+    url("assets/images/common/avatars/9.svg"),
+    url("assets/images/common/avatars/10.svg"),
+    url("assets/images/common/avatars/11.svg"),
+    url("assets/images/common/avatars/12.svg"),
+    url("assets/images/common/avatars/13.svg"),
+    url("assets/images/common/avatars/14.svg"),
+    url("assets/images/common/avatars/15.svg"),
+    url("assets/images/common/avatars/16.svg"),
+    url("assets/images/common/avatars/17.svg"),
+    url("assets/images/common/avatars/18.svg");
+
+    @media (max-width: $tablet) {
+      .preload {
+        background-image:
+          url("assets/images/common/animation/rock-small.png"),
+          url("assets/images/common/animation/scissors-small.png"),
+          url("assets/images/common/animation/paper-small.png");
+      }
+    }
+}
+
