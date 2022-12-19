@@ -340,7 +340,10 @@ $borderRadius: 0.892rem;
 .gamingCard__fieldButton_close {
   position: relative;
   width: calc(12% - 0.1rem / 3);
-  border-radius: $borderRadius 0 0 $borderRadius;
+  border-radius: 0 $borderRadius 0 $borderRadius;
+  border-top: 1px solid var(--ololo-thirdColor);
+  border-right: 1px solid var(--ololo-thirdColor);
+
   @media (min-width: $noTablet) {
     width: calc(12% - 0.6rem / 3);
   }
@@ -370,7 +373,9 @@ $borderRadius: 0.892rem;
 .gamingCard__fieldButton_placeBet {
   position: relative;
   width: calc(50% - 0.1rem / 3);
-  border-radius: 0 $borderRadius $borderRadius 0;
+  border-radius: $borderRadius 0 $borderRadius 0;
+  border-top: 1px solid var(--ololo-thirdColor);
+  border-left: 1px solid var(--ololo-thirdColor);
 
   &:disabled {
     cursor: default;

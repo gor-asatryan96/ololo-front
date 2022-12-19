@@ -18,6 +18,7 @@ import { parseCentrifugeUrl } from '../../../utils/utils';
 const { START } = MAIN_SCENE_NAMES;
 
 const Header = ({ parentStyle, toggleFullScreen }) => {
+  const dispatch = useDispatch();
   const [ deviceType, setDeviceType ] = useState('');
   const menuToggle = useToggle(true);
   const { t } = useLanguageData();
@@ -26,11 +27,12 @@ const Header = ({ parentStyle, toggleFullScreen }) => {
     state => state.globalInfo,
   );
   const { balance } = useSelector(state => state.userInfo);
-  const dispatch = useDispatch();
+  const isStartScene = currentScene === START
 
   useEffect(() => {
     setDeviceType(getMobileOperatingSystem());
   }, []);
+  
 
   const onToggleFullScreen = useCallback(() => {
     if (!toggleFullScreen.active) {
@@ -42,15 +44,15 @@ const Header = ({ parentStyle, toggleFullScreen }) => {
 
   // ____TOCORRECT____
   const handleClickHomeButton = useCallback(() => {
-    dispatch(setSocketChange(true));
-    setTimeout(() => {
-      dispatch(setSocketChange(false));
-    }, 500);
-    if (currentScene === START) {
+    // dispatch(setSocketChange(true));
+    // setTimeout(() => {
+    //   dispatch(setSocketChange(false));
+    // }, 500);
+    if (isStartScene) {
       window.parent.postMessage('OLOLO', '*');
     } else {
-      closeConnection();
-      openConnection(parseCentrifugeUrl(window.process.env.REACT_APP_WS_URL));
+      // closeConnection();
+      // openConnection(parseCentrifugeUrl(window.process.env.REACT_APP_WS_URL));
       // openConnection(process.env.REACT_APP_WS_URL);
       dispatch(setMainScene(START));
     }
@@ -73,9 +75,9 @@ const Header = ({ parentStyle, toggleFullScreen }) => {
             </div>
           </div>
         </div>
-        <MediaQuery minWidth={mediaQuery.noTablet}>
+        {!isStartScene && <MediaQuery minWidth={mediaQuery.noTablet}>
           <Nav />
-        </MediaQuery>
+        </MediaQuery>}
         <div className={classes.header__right}>
           <MediaQuery minWidth={mediaQuery.noTablet}>
             <button

@@ -234,12 +234,12 @@ const GamingCard = ({
             && <span className={classes.gamingCard__fieldButtonCloseIcon} />}
           </button>
 
-          <AutoGameButton
+          {/* <AutoGameButton
             acceptedChoose={acceptedChoose}
             isAutoGame={isAutoGameActive}
             autoGameCount={autoGameCount}
             handleAutoGame={handleAutoGame}
-            gameScene={gameScene} />
+            gameScene={gameScene} /> */}
 
           <AcceptBetButton
             activeChoose={activeChoose}

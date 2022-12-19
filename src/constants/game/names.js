@@ -6,7 +6,7 @@ export const MAIN_SCENE_NAMES = {
 
 export const HEADER_NAV_NAMES = {
   TABLES: 'Tables',
-  TOURNAMENTS: 'Tournaments',
+  // TOURNAMENTS: 'Tournaments',
   LEADERS: 'Leaders',
   HISTORY: 'History',
 };
@@ -18,13 +18,13 @@ export const HEADER_SETTINGS_TABS = {
 };
 
 export const HISTORY_TAB_NAMES = {
-  CLASSIC: 'Classic game',
-  TOURNAMENTS: 'Tournaments',
+  CLASSIC: 'Cash game',
+  // TOURNAMENTS: 'Tournaments',
 };
 
 export const TABLES_TAB_NAMES = {
   WAITING: 'Waiting',
-  EMPTY: 'Empty tables',
+  EMPTY: 'Choose the table',
 };
 
 export const TOURNAMENT_INFO_NAV_NAMES = {

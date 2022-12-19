@@ -7,7 +7,7 @@ import mediaQuery from '../../../constants/style/mediaQueries';
 import HeaderMenuTab from './components/HeaderMenuTab';
 import { HEADER_SETTINGS_TABS } from '../../../constants/game/names';
 import Avatars from './components/Avatars';
-import Languages from './components/Languages';
+// import Languages from './components/Languages';
 
 const HeaderMenu = ({ menuToggle }) => {
   const [ activeTab, setActiveTab ] = useState('SETTINGS');
@@ -31,7 +31,7 @@ const HeaderMenu = ({ menuToggle }) => {
               ))}
           </ul>
         </MediaQuery>
-        <Languages />
+        {/* <Languages /> */}
         <Avatars />
       </div>
       <MediaQuery maxWidth={mediaQuery.tablet}>

@@ -6,7 +6,7 @@ const getRandomInteger = (min, max) => {
 const getRandomIntegerNineSymbol = () => (getRandomInteger(100000000, 999999999));
 
 
-const parseCentrifugeUrl = (url) => {
+const parseCentrifugeUrl = (url = '') => {
   if (url.includes('ws:') || url.includes('wss:')) return url;
 
   return window.location.origin

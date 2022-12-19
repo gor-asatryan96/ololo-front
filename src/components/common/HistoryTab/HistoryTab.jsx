@@ -27,9 +27,9 @@ const HistoryTab = () => {
       <HistoryClassic
         isActive={activeTab === CLASSIC}
         historyData={historyInfo.classicHistory} />
-      <HistoryTournament
+      {/* <HistoryTournament
         isActive={activeTab === TOURNAMENTS}
-        historyData={historyInfo.tournamentHistory} />
+        historyData={historyInfo.tournamentHistory} /> */}
     </div>
   );
 };

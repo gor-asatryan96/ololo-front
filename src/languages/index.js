@@ -4,8 +4,8 @@ import SW from './jsons/sw.json';
 
 const languages = {
   EN,
-  FR,
-  SW,
+  // FR,
+  // SW,
 };
 
 export const getCurrentLanguageData = lang => languages[lang] || languages.EN;

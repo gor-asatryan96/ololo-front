@@ -19,7 +19,6 @@ const AcceptBetButton = ({
   const { t } = useLanguageData();
 
   const clickHandler = () => {
-    console.log('acceptedChoose', acceptedChoose);
     if (!isAutoGame && !acceptedChoose) acceptChoose();
   };
 

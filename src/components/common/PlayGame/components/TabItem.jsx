@@ -19,7 +19,7 @@ const TabItem = ({
           className={
           classNames(classes.playGame__tabButtonText, {
             [classes.playGame__tabButtonText_waitingTable]: title === t['Waiting'],
-            [classes.playGame__tabButtonText_emptyTables]: title === t['Empty tables'],
+            [classes.playGame__tabButtonText_emptyTables]: title === t['Choose the table'],
           })}>
           {t[title]}
         </span>
