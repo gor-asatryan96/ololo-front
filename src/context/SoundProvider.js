@@ -8,7 +8,7 @@ import { sounds } from '../assets/sounds';
 const SoundContext = React.createContext(null);
 
 const SoundProvider = ({ children }) => {
-  const [ isSoundActive, setIsSoundActive ] = useState(localStorage.getItem('sound') !== 'false');
+  const [ isSoundActive, setIsSoundActive ] = useState(!!JSON.parse(localStorage.getItem('sound')));
   const { currentScene } = useSelector(state => state.globalInfo);
   const { emptyTables } = useSelector(state => state.lobbyInfo);
   const activeTables = useSelector(state => state.activeTables);
