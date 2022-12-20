@@ -9,7 +9,7 @@ import {
 import {
   removeActiveTable, initialActiveTableState,
   setActiveTables, addActiveTable, setActiveTableData,
-  setAcceptedChoose, setActiveChoose, setGameTimer, setIsAutoGame, resetAutoGameCount,
+  setAcceptedChoose, setActiveChoose, setGameTimer, setIsAutoGame, resetAutoGameCount, setJoinRequest, removeJoinRequest, declineJoinRequest,
 } from '../../../redux/ducks/activeTablesDuck';
 import { dispatch, getStoreState, getUserId } from '../../../redux/store';
 import { errorHandler } from '../errorHandler';
@@ -26,7 +26,9 @@ import { setIsLeaderboardActive } from '../../../redux/ducks/globalDuck';
 const {
   AUTH, BALANCE, BET_ACCEPTED, ERROR, GAME_START, AUTO_GAME,
   ADD_ACTIVE_ROOM, REMOVE_ACTIVE_ROOM, GAME_STATE, WAITING_TIMER,
-  LEADERBOARD, HISTORY, TOURNAMENT_INFO,
+  LEADERBOARD, HISTORY, TOURNAMENT_INFO, JOIN_REQUEST, MY_JOIN_RESPONSE,
+  JOIN_REQUEST_APPROVED, JOIN_REQUEST_DECLINED
+
 } = SUBSCRIBERS_IDS.USER;
 
 export const subscribers = {};
@@ -151,6 +153,18 @@ const userHandlers = {
   [LEADERBOARD]: (data) => { dispatch(setLeaders(data)); },
   [HISTORY]: (data) => { dispatch(setHistoryInfo(data)); },
   [TOURNAMENT_INFO]: (data) => { dispatch(setTournamentInfo(data)); },
+  [MY_JOIN_RESPONSE]: (data) => { 
+    dispatch(addActiveTable({...data, isRequested: true}))
+  },
+  [JOIN_REQUEST]: (data) => { 
+    dispatch(setJoinRequest(data))
+  },
+  [JOIN_REQUEST_APPROVED]: (data) => { 
+    dispatch(removeJoinRequest(data))
+  },
+  [JOIN_REQUEST_DECLINED]: (data) => { 
+    dispatch(declineJoinRequest(data))
+  },
 };
 
 export const userAction = (data) => {

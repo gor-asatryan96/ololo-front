@@ -1,0 +1,59 @@
+@import '../../../assets/styles/media-variable';
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 12;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: calc(var(--vh, 1vh) * 100);
+  background-color: var(--ololo-black-35);
+}
+
+.popup__container {
+  position: relative;
+  width: calc(100% - 0.57rem);
+  padding: 3.423rem 3.857rem;
+  border-radius: 0.28rem;
+  background-color: var(--ololo-tournaments-ticket-two);
+  color: var(--ololo-silver);
+  font-size: 1.5rem;
+  z-index: 13;
+
+  @media (min-width: $noTablet) {
+    min-width: 416px;
+    width: 28.8%;
+    font-size: 1.25rem;
+  }
+}
+
+.popup__buttonClose {
+  position: absolute;
+  top: 2px;
+  right: 0;
+  width: 2.14rem;
+  height: 2.14rem;
+  padding: 0;
+  border: none;
+  background-image: url("../../../assets/images/common/icons/closeError.svg");
+  background-size: 53.3% auto;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.popup__title {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 0;
+  text-transform: uppercase;
+  color: var(--ololo-bronze);
+}

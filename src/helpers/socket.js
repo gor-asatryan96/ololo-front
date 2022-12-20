@@ -28,6 +28,11 @@ const eventNames = {
   29: 'GAME STATE',
   30: 'ROUND OVER',
   41: 'GET_TOURNAMENT_HISTORY',
+  44: 'MY JOIN RESPONSE',
+  45: 'JOIN REQUEST',
+  46: 'JOIN_REQUEST_APPROVED',
+  47: 'JOIN_REQUEST_DECLINED:',
+  48: 'JOIN_REQUEST_BUSY',
   99: 'ERROR',
 };
 
@@ -51,9 +56,9 @@ export function createSubscriber(eventName) {
   return function (listener) {
     return centrifuge?.subscribe(eventName, (res) => {
       if (res.data) {
-        // if (process.env.NODE_ENV === 'development') {
+        if (process.env.NODE_ENV === 'development') {
         debugLog(eventName, res.data);
-        // }
+        }
         !!listener && listener(res.data);
       }
     });

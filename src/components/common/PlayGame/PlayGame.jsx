@@ -7,6 +7,7 @@ import SliderButton from '../SliderButton/SliderButton';
 import mediaQuery from '../../../constants/style/mediaQueries';
 import { TABLES_TAB_NAMES } from '../../../constants/game/names';
 import TabItem from './components/TabItem';
+import GamingCardWaiting from '../GamingCard/GamingCardWaiting';
 
 const tabNames = Object.values(TABLES_TAB_NAMES);
 
@@ -44,13 +45,15 @@ const PlayGame = ({ waitingTables, emptyTables, classicActiveTables }) => {
       )}
 
       {
-        classicActiveTables.map(item => (
+        classicActiveTables.map(item => {
+          const CurrentComponent = item.isRequested ? GamingCardWaiting : GamingCard
+          return (
           <div key={item.roomId} className={classes.playGame__gamingCard}>
-            <GamingCard
+            <CurrentComponent
               roomData={item}
               roomId={item.roomId} />
           </div>
-        ))
+        )})
       }
     </div>
   );

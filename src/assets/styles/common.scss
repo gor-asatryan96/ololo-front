@@ -73,12 +73,10 @@ $hoverSizeHeaderIcons: 48%;
 // routes, tabs
 
 .navList {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+
   list-style-type: none;
   display: flex;
+  justify-content: space-around;
   flex-shrink: 0;
   overflow: auto;
   margin: 0;
@@ -97,6 +95,10 @@ $hoverSizeHeaderIcons: 48%;
     align-items: stretch;
     background: none;
     box-shadow: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
 }
 

@@ -26,6 +26,9 @@ const SET_WIN_AMOUNT = 'SET_WIN_AMOUNT';
 const SET_GAME_TIMER = 'SET_GAME_TIMER';
 const CHANGE_OPPONENT_AVATAR = 'CHANGE_OPPONENT_AVATAR';
 const SET_SCORE = 'SET_SCORE';
+const SET_JOIN_REQUEST = 'SET_JOIN_REQUEST';
+const REMOVE_JOIN_REQUEST = 'REMOVE_JOIN_REQUEST';
+const DECLINE_JOIN_REQUEST = 'DECLINE_JOIN_REQUEST';
 
 // ACTIONS
 export const setActiveTables = createAction(SET_ACTIVE_TABLES);
@@ -50,6 +53,9 @@ export const setWinAmount = createAction(SET_WIN_AMOUNT);
 export const setGameTimer = createAction(SET_GAME_TIMER);
 export const changeOpponentAvatar = createAction(CHANGE_OPPONENT_AVATAR);
 export const setScore = createAction(SET_SCORE);
+export const setJoinRequest = createAction(SET_JOIN_REQUEST);
+export const removeJoinRequest = createAction(REMOVE_JOIN_REQUEST);
+export const declineJoinRequest = createAction(DECLINE_JOIN_REQUEST);
 
 // REDUCER
 
@@ -77,6 +83,7 @@ export const initialActiveTableState = {
   activeChoose: null,
   acceptedChoose: null,
   winAmount: null,
+  joinRequest: null,
 };
 
 export const activeTables = createReducer({}, (state, { value }) => ({
@@ -96,6 +103,7 @@ export const activeTables = createReducer({}, (state, { value }) => ({
       ...value.data,
       gameScene: CHOOSE,
       acceptedChoose: null,
+      joinRequest: null,
     },
   }),
   [SET_GAME_SCENE]: () => ({
@@ -264,4 +272,35 @@ export const activeTables = createReducer({}, (state, { value }) => ({
       score: value.score,
     },
   }),
+  [SET_JOIN_REQUEST]: () => {
+    if(!state[value.roomId]) return state
+
+    return {
+    ...state,
+    [value.roomId]: {
+      ...state[value.roomId],
+      joinRequest: value,
+    },
+  }},
+  [REMOVE_JOIN_REQUEST]: () => {
+    if(!state[value.roomId]) return state
+
+    return {
+    ...state,
+    [value.roomId]: {
+      ...state[value.roomId],
+      joinRequest: null,
+    },
+  }},
+  [DECLINE_JOIN_REQUEST]: () => {
+    if(!state[value.roomId]) return state
+
+    return {
+    ...state,
+    [value.roomId]: {
+      ...state[value.roomId],
+      joinRequest: null,
+      isDeclined: state[value.roomId].isRequested,
+    },
+  }},
 }));

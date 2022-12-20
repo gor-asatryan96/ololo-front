@@ -249,4 +249,4 @@ export const leadersFakeData = [
     won_matches: 2587747,
   },
 ];
-export const FDLanguages = [ 'SW', 'FR', 'EN' ];
+export const FDLanguages = [ 'SW', 'EN' ];

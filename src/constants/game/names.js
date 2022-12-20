@@ -13,8 +13,8 @@ export const HEADER_NAV_NAMES = {
 
 export const HEADER_SETTINGS_TABS = {
   SETTINGS: 'Settings',
-  HOW_TO_PLAY: 'How to play',
-  RULES: 'Rules',
+  HOW_TO_PLAY: 'How to Play',
+  // RULES: 'Rules',
 };
 
 export const HISTORY_TAB_NAMES = {

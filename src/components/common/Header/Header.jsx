@@ -14,14 +14,18 @@ import { getMobileOperatingSystem, numWithCommas } from '../../../helpers/genera
 import { useSound } from '../../../context/SoundProvider';
 import { closeConnection, openConnection } from '../../../api/socket';
 import { parseCentrifugeUrl } from '../../../utils/utils';
+import HowToPlayPopup from '../../desktop/HowToPlayPopup/HowToPlayPopup';
+import { useMobileMode } from '../../../hooks/general/useMobileMode';
 
 const { START } = MAIN_SCENE_NAMES;
 
 const Header = ({ parentStyle, toggleFullScreen }) => {
   const dispatch = useDispatch();
   const [ deviceType, setDeviceType ] = useState('');
+  const [ isHowToPlayOpen, setIsHowToPlayOpen ] = useState(false)
   const menuToggle = useToggle(true);
   const { t } = useLanguageData();
+  const isMobile = useMobileMode();
   const { toggleSound, isSoundActive } = useSound();
   const { currentScene } = useSelector(
     state => state.globalInfo,
@@ -59,6 +63,7 @@ const Header = ({ parentStyle, toggleFullScreen }) => {
   }, [ currentScene ]);
 
   return (
+    <>
     <header className={classNames(classes.header, parentStyle)}>
       <div className={classes.header__container}>
         <div className={classes.header__left}>
@@ -83,6 +88,7 @@ const Header = ({ parentStyle, toggleFullScreen }) => {
             <button
               type="button"
               className={`button ${classes.header_howToPlay}`}
+              onClick={() => setIsHowToPlayOpen(true)}
             >
               {t['How to Play']}
             </button>
@@ -119,6 +125,8 @@ const Header = ({ parentStyle, toggleFullScreen }) => {
         </div>
       </div>
     </header>
+    {!isMobile && isHowToPlayOpen && <HowToPlayPopup close={() => setIsHowToPlayOpen(false)} />}
+    </>
   );
 };
 

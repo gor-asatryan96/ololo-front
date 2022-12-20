@@ -72,5 +72,12 @@
   "Something went wrong": "Something went wrong",
   "Room Limit reached": "You already have 2 active tables!",
   "You don't have connection": "You don't have connection",
-  "You have insufficient funds": "You have insufficient funds"
+  "You have insufficient funds": "You have insufficient funds",
+  "Yes": "Yes",
+  "No": "No",
+  "Are you sure you want to leave?": "Are you sure you want to leave?",
+  "Do you want to play with ID": "Do you want to play with ID",
+  "approval to join the game": "approval to join the game",
+  "Settings": "Settings",
+  "Declined": "Declined"
 }

@@ -51,11 +51,11 @@ function Welcome() {
             {t['Play']}
           </span>
         </div>
-        <div
+        {/* <div
           className={classNames(classes.wrapper__button, classes.wrapper__button_demo)}
           onClick={() => onPlayClick(DEMO)}
           aria-label='play the game in test mode'>{t['Demo']}
-        </div>
+        </div> */}
       </div>
     </div>
   );

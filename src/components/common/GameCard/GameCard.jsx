@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import { useDispatch, useSelector } from 'react-redux';
 import classes from './GameCard.module.scss';
-import { emitCreateRoom, emitJoinRoom } from '../../../api/socket/emitters';
+import { emitCreateRoom, emitJoinRoomRequest } from '../../../api/socket/emitters';
 import avatars from '../../../assets/images/common/avatars';
 import { useLanguageData } from '../../../context/LanguageProvider';
 import { setErrorMessage } from '../../../redux/ducks/errorDuck';
@@ -21,7 +21,7 @@ const GameCard = ({ isWaiting, tableData }) => {
       return;
     }
     if (isWaiting) {
-      emitJoinRoom({ roomId: id });
+      emitJoinRoomRequest({ roomId: id });
     } else {
       emitCreateRoom({ templateId: id });
     }

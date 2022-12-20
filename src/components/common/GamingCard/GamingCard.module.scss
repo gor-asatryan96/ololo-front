@@ -36,7 +36,7 @@ $borderRadius: 0.892rem;
   position: relative;
   border-radius: $borderRadius;
   background-color: var(--ololo-cardBackground);
-  filter: drop-shadow(0 0.107rem 0.214rem var(--ololo-black-16));
+  overflow: hidden;
 }
 
 .gamingCard__header {
@@ -628,6 +628,10 @@ $borderRadius: 0.892rem;
   }
 }
 
+.gamingCard__waitingDialog_requested {
+  top: 35%
+}
+
 .gamingCard_blue {
   .gamingCard__waitingDialog {
     &::before {
@@ -652,4 +656,8 @@ $borderRadius: 0.892rem;
 .gamingCard__tournamentScoreItem {
   width: 50%;
   text-align: center;
+}
+
+.declined {
+  color: red;
 }

@@ -7,8 +7,8 @@ import HandAnimation from '../HandAnimation/HandAnimation';
 import WinnerBanner from '../WinnerBanner/WinnerBanner';
 import mediaQuery from '../../../constants/style/mediaQueries';
 import {
-  emitAutoBet,
-  emitCloseRoom,
+  // emitAutoBet,
+  // emitCloseRoom,
   emitGameState,
   emitPlaceBet,
   emitWaitingTimer,
@@ -26,11 +26,13 @@ import OpponentHistory from './components/OpponentHistory';
 import UserHistory from './components/UserHistory';
 import PlayChooses from './components/PlayChooses';
 import ResultBanner from './components/ResultBanner';
-import AutoGameButton from './components/AutoGameButton';
+// import AutoGameButton from './components/AutoGameButton';
 import AcceptBetButton from './components/AcceptBetButton';
 import { useLanguageData } from '../../../context/LanguageProvider';
 import useGamingCardSounds from '../../../hooks/game/useGamingCardSound';
 import TournamentWaiting from '../WinnerBanner/TournamentWaiting/TournamentWaiting';
+import CloseGameButton from './components/CloseGameButton';
+import JoinRequest from './components/JoinRequest/JoinRequest';
 
 const { ROCK, PAPER, SCISSORS } = GAME_CHOICES;
 const { WAITING, COMPARISON, CHOOSE } = GAME_SCENES;
@@ -64,7 +66,7 @@ const GamingCard = ({
     gameScene, activeChoose, history: playerHistory, gameId, winAmount,
     timer, bet, isDrawing, isYouWinBannerShow, result, acceptedChoose, isInfiniteHand,
     roundsToPlay, tournamentRound, score, tournamentId, currentRound: playerPosition,
-    autoGame: { count: autoGameCount, isActive: isAutoGameActive },
+    autoGame: { count: autoGameCount, isActive: isAutoGameActive }, joinRequest,
     opponent: {
       history: opponentHistory,
       avatarId: opponentAvatarId,
@@ -102,9 +104,9 @@ const GamingCard = ({
     return () => stop();
   }, [ gameScene, timer ]);
 
-  const handleAutoGame = () => {
-    emitAutoBet({ gameId });
-  };
+  // const handleAutoGame = () => {
+  //   emitAutoBet({ gameId });
+  // };
 
   const acceptChoose = () => {
     if (balance < bet) {
@@ -114,14 +116,7 @@ const GamingCard = ({
     emitPlaceBet({ gameId, userId, choice: activeChoose });
   };
 
-  const closeGamingCard = () => {
-    emitCloseRoom({ roomId });
-  };
-
   const rightTime = secondsToTime(time);
-
-  const isCrossDisabled = ((!tournamentId && gameScene !== COMPARISON)
-    || (!!tournamentId && gameScene !== WAITING));
 
   return (
     <section className={classNames(
@@ -219,20 +214,7 @@ const GamingCard = ({
             )} />
           }
 
-          {/* Close button */}
-          <button
-            type='button'
-            className={classNames(
-              classes.gamingCard__fieldButton,
-              classes.gamingCard__fieldButton_close,
-            )}
-            aria-label='close game field'
-            onClick={closeGamingCard}
-            disabled={gameScene === COMPARISON || (tournamentId && gameScene === WAITING)}
-          >
-            {isCrossDisabled
-            && <span className={classes.gamingCard__fieldButtonCloseIcon} />}
-          </button>
+          <CloseGameButton gameScene={gameScene} tournamentId={tournamentId} roomId={roomId} />
 
           {/* <AutoGameButton
             acceptedChoose={acceptedChoose}
@@ -267,6 +249,7 @@ const GamingCard = ({
           playerPosition={playerPosition}
           activeTournament={activeTournament}
         />
+        {joinRequest && <JoinRequest data={joinRequest} />}
       </div>
     </section>
   );

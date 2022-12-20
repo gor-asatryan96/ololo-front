@@ -6,6 +6,9 @@ const {
   CLOSE_ROOM,
   CREATE_ROOM,
   JOIN_ROOM,
+  JOIN_ROOM_REQUEST,
+  JOIN_REQUEST_APPROVED,
+  JOIN_REQUEST_DECLINED,
   JOIN_TOURNAMENT,
   LEAVE_TOURNAMENT,
   PLACE_BET,
@@ -21,6 +24,9 @@ const {
 export const emitAuth = createEmitter(AUTH);
 export const emitCreateRoom = createEmitter(CREATE_ROOM);
 export const emitJoinRoom = createEmitter(JOIN_ROOM);
+export const emitJoinRoomRequest = createEmitter(JOIN_ROOM_REQUEST);
+export const emitJoinRoomRequestApproved = createEmitter(JOIN_REQUEST_APPROVED);
+export const emitJoinRoomRequestDeclined = createEmitter(JOIN_REQUEST_DECLINED);
 export const emitCloseRoom = createEmitter(CLOSE_ROOM);
 export const emitPlaceBet = createEmitter(PLACE_BET);
 export const emitJoinTournament = createEmitter(JOIN_TOURNAMENT);
