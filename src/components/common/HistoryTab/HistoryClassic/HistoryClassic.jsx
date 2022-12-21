@@ -50,14 +50,18 @@ const HistoryClassic = ({ isActive, historyData }) => {
         </div>
       </div>
       <div className={classes.history__columns}>
-        {
-          historyData.items.map((item, index) => {
+        {historyData?.items.length 
+        ? historyData.items.map((item, index) => {
             if (index === historyData.items.length - 1) {
               return <HistoryClassicItem key={index} currentRef={lastTicketRef} item={item} />;
             }
             return <HistoryClassicItem key={index} item={item} />;
           })
+          : <div className={classes.noItem}>
+          {t["You haven't played yet"]}
+        </div>
         }
+
       </div>
     </div>
   );
