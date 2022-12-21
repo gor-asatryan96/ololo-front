@@ -42,6 +42,9 @@ const HistoryClassic = ({ isActive, historyData }) => {
         <div className={classNames(classes.history__cell, classes.history__cell_bet)}>
           {t['Bet']}
         </div>
+        <div className={classNames(classes.history__cell, classes.history__cell_totalBet)}>
+          {t['Total bet']}
+        </div>
         <div className={classNames(classes.history__cell, classes.history__cell_status)}>
           {t['Status']}
         </div>

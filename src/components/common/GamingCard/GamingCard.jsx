@@ -7,6 +7,7 @@ import HandAnimation from '../HandAnimation/HandAnimation';
 import WinnerBanner from '../WinnerBanner/WinnerBanner';
 import mediaQuery from '../../../constants/style/mediaQueries';
 import {
+  emitCloseRoom,
   // emitAutoBet,
   // emitCloseRoom,
   emitGameState,
@@ -119,6 +120,10 @@ const GamingCard = ({
   };
 
   const rightTime = secondsToTime(time);
+
+  const leaveGame = () => {
+    emitCloseRoom({ roomId });
+  };
 
   return (
     <section className={classNames(
@@ -252,7 +257,7 @@ const GamingCard = ({
           activeTournament={activeTournament}
         />
         {joinRequest && <JoinRequest data={joinRequest} />}
-        {isCloseConfirmOpen && <CloseGamePopup close={() => setIsCloseConfirmOpen(false)} roomId={roomId} />}
+        {isCloseConfirmOpen && <CloseGamePopup close={() => setIsCloseConfirmOpen(false)} roomId={roomId} onYes={leaveGame} />}
       </div>
     </section>
   );

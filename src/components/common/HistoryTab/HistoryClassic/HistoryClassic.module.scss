@@ -70,7 +70,7 @@
     }
   }
 
-  .history__cell_bet {
+  .history__cell_bet, .history__cell_totalBet {
     color: var(--ololo-gold);
     opacity: 0.8;
   }
@@ -92,27 +92,31 @@
 
 
 .history__cell_date {
-  width: 22.72%;
+  width: 17%;
 
-  @media (min-width: $noTablet) {
-    width: 18%;
-  }
+  // @media (min-width: $noTablet) {
+  //   width: 18%;
+  // }
 }
 
 .history__cell_duration {
-  width: 26.36%;
+  width: 23%;
 
-  @media (min-width: $noTablet) {
-    width: 31.04%;
-  }
+  // @media (min-width: $noTablet) {
+  //   width: 27%;
+  // }
 }
 
 .history__cell_bet {
-  width: 21.06%;
+  width: 18%;
+}
+
+.history__cell_totalBet {
+  width: 19%;
 }
 
 .history__cell_status {
-  width: 29.86%;
+  width: 23%;
 }
 
 .greenText {

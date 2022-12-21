@@ -5,6 +5,7 @@ import classes from './Tournament.module.scss';
 import { useLanguageData } from '../../../../context/LanguageProvider';
 import { getDateFromIso } from '../../../../helpers/general';
 import { GAME_SCENES } from '../../../../constants/game/ids';
+import { selectCurrency } from '../../../../redux/ducks/globalDuck';
 
 const { COMPARISON } = GAME_SCENES;
 
@@ -14,6 +15,7 @@ const Tournament = ({
 }) => {
   const { t } = useLanguageData();
   const activeTables = useSelector(state => state.activeTables);
+  const currency = useSelector(selectCurrency);
 
   const activeTablesArray = Object.entries(activeTables);
 
@@ -53,7 +55,7 @@ const Tournament = ({
         classes.tournament__row,
         classes.tournament__row_winAmount,
       )}>
-        ${buyIn}
+        {`${buyIn} ${currency}`}
       </div>
       <div className={classNames(
         classes.tournament__row,

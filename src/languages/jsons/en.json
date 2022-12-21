@@ -79,7 +79,7 @@
   "Do you want to play with ID": "Do you want to play with ID",
   "approval to join the game": "approval to join the game",
   "Settings": "Settings",
-  "Declined": "Declined",
+  "Opponent doesn't want to play": "Opponent doesn't want to play",
   "Ololo is a 2-player, real-time game.": "Ololo is a 2-player, real-time game.",
   "How to start:": "How to start:",
   "Click Join and wait for an opponent or join an already waiting player.": "Click Join and wait for an opponent or join an already waiting player.",
@@ -103,6 +103,7 @@
   "If a disconnection occurs after an active game round and your bets are accepted by the server, the game will proceed as normal. Any winnings will be processed according to the game result, regardless of the disconnection.": "If a disconnection occurs after an active game round and your bets are accepted by the server, the game will proceed as normal. Any winnings will be processed according to the game result, regardless of the disconnection.",
   "For every game, in case of any divergences between Swahili and English, the English text is considered the original.": "For every game, in case of any divergences between Swahili and English, the English text is considered the original.",
   "The organizer can make changes in the game, informing the participants in advance.": "The organizer can make changes in the game, informing the participants in advance.",
-  "Good luck!": "Good luck!"
-
+  "Good luck!": "Good luck!",
+  "Total bet": "Total bet",
+  "The table is busy": "The table is busy"
 }

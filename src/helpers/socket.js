@@ -33,6 +33,7 @@ const eventNames = {
   46: 'JOIN_REQUEST_APPROVED',
   47: 'JOIN_REQUEST_DECLINED:',
   48: 'JOIN_REQUEST_BUSY',
+  49: "JOIN_REQUEST_CANCEL",
   99: 'ERROR',
 };
 

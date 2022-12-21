@@ -27,7 +27,7 @@ const Header = ({ parentStyle, toggleFullScreen }) => {
   const { t } = useLanguageData();
   const isMobile = useMobileMode();
   const { toggleSound, isSoundActive } = useSound();
-  const { currentScene } = useSelector(
+  const { currentScene, currency } = useSelector(
     state => state.globalInfo,
   );
   const { balance } = useSelector(state => state.userInfo);
@@ -76,7 +76,7 @@ const Header = ({ parentStyle, toggleFullScreen }) => {
           <div className={classes.balanceOfMoney}>
             <div className={classes.balanceOfMoney__container}>
               {numWithCommas(balance)}
-              <span className={classes.balanceOfMoney__currency}> Tzs</span>
+              <span className={classes.balanceOfMoney__currency}> {currency}</span>
             </div>
           </div>
         </div>

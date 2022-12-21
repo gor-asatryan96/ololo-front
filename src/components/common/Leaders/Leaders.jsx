@@ -91,7 +91,7 @@ const Leaders = () => {
               />
           ))}
         </div>
-        {me.remoteId && <LeadersRowItem
+        {me.remoteId && leaderboard.length > 13 && <LeadersRowItem
           data={me}
           index={me.position || '-'}
           currentClass={`leaders__column_last${isMyId ? '_end' : ''}`}

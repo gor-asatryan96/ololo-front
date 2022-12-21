@@ -6,6 +6,8 @@ import { useLanguageData } from '../../../context/LanguageProvider';
 import avatars from '../../../assets/images/common/avatars';
 import { getUserId } from '../../../redux/store';
 import { getOrdinalPostfix } from '../../../helpers/general';
+import { useSelector } from 'react-redux';
+import { selectCurrency } from '../../../redux/ducks/globalDuck';
 
 const { WIN, LOSE, DRAW } = GAME_RESULTS;
 
@@ -14,6 +16,7 @@ const WinnerBanner = ({
   bet, winAmount, userAvatar, opponentAvatar, playerPosition, activeTournament,
 }) => {
   const { t } = useLanguageData();
+  const currency = useSelector(selectCurrency)
   const resultText = useMemo(() => getResultText(result), [ result ]);
   const userId = getUserId();
   const getAvatar = () => {
@@ -40,7 +43,7 @@ const WinnerBanner = ({
       <div className={classes.winnerBanner__top}>
         <div className={classes.winnerBanner__gameInfo}>
           <div className={classes.winnerBanner__betAmount}>
-            {!isTournament && `${bet}$`}
+            {!isTournament && `${bet} ${currency}`}
             {isTournament && currentRound}
           </div>
           <div className={classes.winnerBanner__time}>00:00</div>
@@ -73,7 +76,7 @@ const WinnerBanner = ({
           {(!isTournament || !result) && (
             <div
               className={classes.winnerBanner__amount}
-            >{`$${winAmount}`}</div>
+            >{`${winAmount} ${currency}`}</div>
           )}
           {isTournament && result && (
             <div className={classes.winnerBanner__tournamentContainer}>

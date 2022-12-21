@@ -27,6 +27,7 @@ const SET_GAME_TIMER = 'SET_GAME_TIMER';
 const CHANGE_OPPONENT_AVATAR = 'CHANGE_OPPONENT_AVATAR';
 const SET_SCORE = 'SET_SCORE';
 const SET_JOIN_REQUEST = 'SET_JOIN_REQUEST';
+const APPROVE_JOIN_REQUEST = 'APPROVE_JOIN_REQUEST';
 const REMOVE_JOIN_REQUEST = 'REMOVE_JOIN_REQUEST';
 const DECLINE_JOIN_REQUEST = 'DECLINE_JOIN_REQUEST';
 
@@ -54,6 +55,7 @@ export const setGameTimer = createAction(SET_GAME_TIMER);
 export const changeOpponentAvatar = createAction(CHANGE_OPPONENT_AVATAR);
 export const setScore = createAction(SET_SCORE);
 export const setJoinRequest = createAction(SET_JOIN_REQUEST);
+export const approveJoinRequest = createAction(APPROVE_JOIN_REQUEST);
 export const removeJoinRequest = createAction(REMOVE_JOIN_REQUEST);
 export const declineJoinRequest = createAction(DECLINE_JOIN_REQUEST);
 
@@ -282,9 +284,23 @@ export const activeTables = createReducer({}, (state, { value }) => ({
       joinRequest: value,
     },
   }},
-  [REMOVE_JOIN_REQUEST]: () => {
+  [APPROVE_JOIN_REQUEST]: () => {
     if(!state[value.roomId]) return state
 
+    return {
+    ...state,
+    [value.roomId]: {
+      ...state[value.roomId],
+      joinRequest: null,
+    },
+  }},
+  [REMOVE_JOIN_REQUEST]: () => {
+    if(!state[value.roomId]) return state
+    if(state[value.roomId].isRequested) {
+      const newState = {...state}
+      delete newState[value.roomId]
+      return newState
+    }
     return {
     ...state,
     [value.roomId]: {

@@ -79,7 +79,7 @@
   "Do you want to play with ID": "Unataka kucheza na ID",
   "approval to join the game": "akubali kujiunga na mchezo",
   "Settings": "Mipangilio",
-  "Declined": "Declined",
+  "Opponent doesn't want to play": "Mpinzani hataki kucheza",
   "Ololo is a 2-player, real-time game.": "Ololo ni mchezo wa wachezaji 2, katika muda halisi.",
   "How to start:": "Jinsi ya kuanza:",
   "Click Join and wait for an opponent or join an already waiting player.": "Bonyeza Kujiunga na subiri mpinzani au jiunge na mchezaji aliye tayari.",
@@ -103,5 +103,7 @@
   "If a disconnection occurs after an active game round and your bets are accepted by the server, the game will proceed as normal. Any winnings will be processed according to the game result, regardless of the disconnection.": "Kama ikitokea kupotea mawasiliano baada ya mzunguko wa mchezo na beti zako zilikuwa zimepokelewa na server,  mchezo utaendelea kama kawaida. Ushindi wowote utashughulikiwa kulingana na matokeo ya mchezo bila kuzingatia kupotea kwa mawasiliano.",
   "For every game, in case of any divergences between Swahili and English, the English text is considered the original.": "Kwa kila mchezo, ikitokea kuna mabadiliko kati ya lugha ya Kingereza na lugha ya Kiswahili, maandishi ya lugha ya Kingereza yatazingatiwa kuwa halisi zaidi.",
   "The organizer can make changes in the game, informing the participants in advance.": "Muandaaji anaweza kufanya mabadiliko kwenye mchezo, akawataarifu washiriki kabla ya mabadiliko hayo.",
-  "Good luck!": "Kila la kheri!"
+  "Good luck!": "Kila la kheri!",
+  "Total bet": "Jumla",
+  "The table is busy": "meza ni busy"
 }

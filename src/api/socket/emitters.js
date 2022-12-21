@@ -19,6 +19,7 @@ const {
   GET_HISTORY,
   CHANGE_AVATAR,
   GET_TOURNAMENT_HISTORY,
+  JOIN_REQUEST_CANCEL,
 } = EMITTERS_IDS;
 
 export const emitAuth = createEmitter(AUTH);
@@ -27,6 +28,7 @@ export const emitJoinRoom = createEmitter(JOIN_ROOM);
 export const emitJoinRoomRequest = createEmitter(JOIN_ROOM_REQUEST);
 export const emitJoinRoomRequestApproved = createEmitter(JOIN_REQUEST_APPROVED);
 export const emitJoinRoomRequestDeclined = createEmitter(JOIN_REQUEST_DECLINED);
+export const emitJoinRoomRequestCancel = createEmitter(JOIN_REQUEST_CANCEL);
 export const emitCloseRoom = createEmitter(CLOSE_ROOM);
 export const emitPlaceBet = createEmitter(PLACE_BET);
 export const emitJoinTournament = createEmitter(JOIN_TOURNAMENT);

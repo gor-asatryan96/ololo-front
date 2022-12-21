@@ -628,10 +628,6 @@ $borderRadius: 0.892rem;
   }
 }
 
-.gamingCard__waitingDialog_requested {
-  top: 35%
-}
-
 .gamingCard_blue {
   .gamingCard__waitingDialog {
     &::before {
@@ -659,7 +655,7 @@ $borderRadius: 0.892rem;
 }
 
 .declined {
-  color: red;
+  color: #ff4444;
 }
 
 .gamingPopup__text {

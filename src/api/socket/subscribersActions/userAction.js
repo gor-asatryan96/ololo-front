@@ -9,7 +9,7 @@ import {
 import {
   removeActiveTable, initialActiveTableState,
   setActiveTables, addActiveTable, setActiveTableData,
-  setAcceptedChoose, setActiveChoose, setGameTimer, setIsAutoGame, resetAutoGameCount, setJoinRequest, removeJoinRequest, declineJoinRequest,
+  setAcceptedChoose, setActiveChoose, setGameTimer, setIsAutoGame, resetAutoGameCount, setJoinRequest, removeJoinRequest, declineJoinRequest, approveJoinRequest,
 } from '../../../redux/ducks/activeTablesDuck';
 import { dispatch, getStoreState, getUserId } from '../../../redux/store';
 import { errorHandler } from '../errorHandler';
@@ -21,13 +21,13 @@ import {
   setTournaments,
   setTournamentWinners,
 } from '../../../redux/ducks/tournamentsDuck';
-import { setIsLeaderboardActive } from '../../../redux/ducks/globalDuck';
+import { setCurrency, setIsLeaderboardActive } from '../../../redux/ducks/globalDuck';
 
 const {
   AUTH, BALANCE, BET_ACCEPTED, ERROR, GAME_START, AUTO_GAME,
   ADD_ACTIVE_ROOM, REMOVE_ACTIVE_ROOM, GAME_STATE, WAITING_TIMER,
   LEADERBOARD, HISTORY, TOURNAMENT_INFO, JOIN_REQUEST, MY_JOIN_RESPONSE,
-  JOIN_REQUEST_APPROVED, JOIN_REQUEST_DECLINED
+  JOIN_REQUEST_APPROVED, JOIN_REQUEST_DECLINED, JOIN_REQUEST_CANCEL, JOIN_REQUEST_BUSY
 
 } = SUBSCRIBERS_IDS.USER;
 
@@ -49,7 +49,7 @@ const subscribeToRoom = (data, notification) => {
 const userHandlers = {
   [AUTH]: (data) => {
     const {
-      avatarId, activeTables, yourPendingJoinRequests = [], isLeaderboardActive, tournaments, tournamentWinners, ...rest
+      avatarId, activeTables, yourPendingJoinRequests = [], isLeaderboardActive, tournaments, tournamentWinners, currency, ...rest
     } = data;
 
     const userId = getUserId();
@@ -121,6 +121,7 @@ const userHandlers = {
       setAvatar(avatarId),
       setTournaments(tournaments),
       setTournamentWinners(tournamentWinners),
+      setCurrency(currency)
     ]));
   },
   [BALANCE]: (data) => { dispatch(setBalance(data)); },
@@ -177,10 +178,16 @@ const userHandlers = {
     dispatch(setJoinRequest(data))
   },
   [JOIN_REQUEST_APPROVED]: (data) => { 
-    dispatch(removeJoinRequest(data))
+    dispatch(approveJoinRequest(data))
   },
   [JOIN_REQUEST_DECLINED]: (data) => { 
     dispatch(declineJoinRequest(data))
+  },
+  [JOIN_REQUEST_CANCEL]: (data) => { 
+    dispatch(removeJoinRequest(data))
+  },
+  [JOIN_REQUEST_BUSY]: () => { 
+    dispatch(setErrorMessage('The table is busy'))
   },
 };
 

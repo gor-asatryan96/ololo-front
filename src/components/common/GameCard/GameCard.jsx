@@ -7,10 +7,12 @@ import avatars from '../../../assets/images/common/avatars';
 import { useLanguageData } from '../../../context/LanguageProvider';
 import { setErrorMessage } from '../../../redux/ducks/errorDuck';
 import { errorHandler } from '../../../api/socket/errorHandler';
+import { selectCurrency } from '../../../redux/ducks/globalDuck';
 
 const GameCard = ({ isWaiting, tableData }) => {
   const dispatch = useDispatch();
   const userBalance = useSelector(state => state.userInfo.balance);
+  const currency = useSelector(selectCurrency);
   const { t } = useLanguageData();
   const {
     id, bet, user, playing,
@@ -38,10 +40,10 @@ const GameCard = ({ isWaiting, tableData }) => {
       <div className={classes.gameCard}>
         <div className={classes.gameCard__priceStatus}>
           <div className={classes.gameCard__price}>
-            <span className={classes.gameCard__priceSymbol}>
-              $
-            </span>
             {bet}
+            <span className={classes.gameCard__priceSymbol}>
+              {currency}
+            </span>
           </div>
           {isWaiting && (<div className={classes.gameCard__wait}>{t['Wait']}</div>)}
         </div>
