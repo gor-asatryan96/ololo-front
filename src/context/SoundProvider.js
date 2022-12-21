@@ -41,7 +41,7 @@ const SoundProvider = ({ children }) => {
     if (!Object.keys(activeTables).length) {
       if (!backgrondOptions.isPlaying) {
         gameStartOptions.stop();
-        playBackground();
+        // playBackground();
       }
     } else if (!gameStartOptions.isPlaying) {
       backgrondOptions.stop();

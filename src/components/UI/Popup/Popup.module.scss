@@ -16,17 +16,21 @@
 .popup__container {
   position: relative;
   width: calc(100% - 0.57rem);
-  padding: 3.423rem 3.857rem;
+  padding-top: 3.423rem;
   border-radius: 0.28rem;
   background-color: var(--ololo-tournaments-ticket-two);
   color: var(--ololo-silver);
   font-size: 1.5rem;
   z-index: 13;
+  max-height: 94vh;
+  overflow-y: hidden;
+  display: flex;
 
   @media (min-width: $noTablet) {
     min-width: 416px;
     width: 28.8%;
     font-size: 1.25rem;
+    max-height: 70vh;
   }
 }
 
@@ -55,5 +59,5 @@
   font-weight: bold;
   line-height: 0;
   text-transform: uppercase;
-  color: var(--ololo-bronze);
+  color: var(--ololo-gold);
 }

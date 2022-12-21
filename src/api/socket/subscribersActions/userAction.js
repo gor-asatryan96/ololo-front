@@ -49,16 +49,26 @@ const subscribeToRoom = (data, notification) => {
 const userHandlers = {
   [AUTH]: (data) => {
     const {
-      avatarId, activeTables, isLeaderboardActive, tournaments, tournamentWinners, ...rest
+      avatarId, activeTables, yourPendingJoinRequests = [], isLeaderboardActive, tournaments, tournamentWinners, ...rest
     } = data;
 
     const userId = getUserId();
 
-    if (activeTables.length) {
+    if (activeTables.length || yourPendingJoinRequests.length) {
       const formattedActiveTables = activeTables.filter(table => !table.tournamentId)
-        ?.reduce((obj, { id, bet, timer }) => {
+        ?.reduce((obj, { id, bet, timer, pendingJoinRequest }) => {
           obj[id] = {
-            ...initialActiveTableState, bet, timer, roomId: id,
+            ...initialActiveTableState, 
+            bet, 
+            timer, 
+            roomId: id,
+            joinRequest: pendingJoinRequest ? {
+              ...pendingJoinRequest,
+              roomId: id,
+              requestedUserAvatarId: pendingJoinRequest.avatarId,
+              requestedUser: pendingJoinRequest.remoteId,
+            } 
+            : null
           };
           return obj;
         }, {});
@@ -72,7 +82,14 @@ const userHandlers = {
           return obj;
         }, {});
 
-      dispatch(setActiveTables({ ...formattedActiveTables, ...formattedTournamentActiveTables }));
+      const requestedTables = yourPendingJoinRequests.reduce((obj, table) => {
+        obj[table.roomId] = {
+          ...initialActiveTableState, ...table, isRequested: true
+        };
+        return obj;
+      }, {});
+
+      dispatch(setActiveTables({ ...formattedActiveTables, ...formattedTournamentActiveTables, ...requestedTables }));
 
       activeTables.forEach((table) => {
         if (!table.time) {

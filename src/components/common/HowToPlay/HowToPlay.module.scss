@@ -1,0 +1,40 @@
+.root {
+  flex: 1;
+  width: 100%;
+  overflow-y: auto;
+  padding: 0 2rem 1rem 1.5rem;
+  color: var(--ololo-white-7);
+
+}
+
+.section {
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--ololo-green);
+}
+
+.paragraphs {
+  margin-top: 1rem;
+}
+
+.paragraph {
+  margin: 0.5rem 0.9rem;
+  font-size: 1.05rem;
+  
+}
+
+.list {
+  padding-inline-start: 2.2rem;
+
+  list-style-type: square;
+}
+
+.listItem {
+  font-size: 1.05rem;
+  margin: 0.2rem 0;
+}

@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import classNames from 'classnames';
 import { useMediaQuery } from 'react-responsive/src';
 import { useDispatch, useSelector } from 'react-redux';
@@ -33,6 +33,7 @@ import useGamingCardSounds from '../../../hooks/game/useGamingCardSound';
 import TournamentWaiting from '../WinnerBanner/TournamentWaiting/TournamentWaiting';
 import CloseGameButton from './components/CloseGameButton';
 import JoinRequest from './components/JoinRequest/JoinRequest';
+import CloseGamePopup from './components/CloseGamePopup/CloseGamePopup';
 
 const { ROCK, PAPER, SCISSORS } = GAME_CHOICES;
 const { WAITING, COMPARISON, CHOOSE } = GAME_SCENES;
@@ -53,6 +54,7 @@ const choices = [ PAPER, SCISSORS, ROCK ];
 const GamingCard = ({
   theme = 'green', isTournament, roomId, roomData, openAdditionalInfoPopup, sendId, activeTournament,
 }) => {
+  const dispatch = useDispatch();
   const { t } = useLanguageData();
   const isTablet = useMediaQuery({ query: `(max-width: ${mediaQuery.tablet}px)` });
   const {
@@ -61,7 +63,7 @@ const GamingCard = ({
     remoteId,
     balance,
   } = useSelector(({ userInfo }) => userInfo);
-  const dispatch = useDispatch();
+  const [isCloseConfirmOpen, setIsCloseConfirmOpen] = useState(false)
   const {
     gameScene, activeChoose, history: playerHistory, gameId, winAmount,
     timer, bet, isDrawing, isYouWinBannerShow, result, acceptedChoose, isInfiniteHand,
@@ -214,7 +216,7 @@ const GamingCard = ({
             )} />
           }
 
-          <CloseGameButton gameScene={gameScene} tournamentId={tournamentId} roomId={roomId} />
+          <CloseGameButton setIsCloseConfirmOpen={setIsCloseConfirmOpen} gameScene={gameScene} tournamentId={tournamentId} roomId={roomId} />
 
           {/* <AutoGameButton
             acceptedChoose={acceptedChoose}
@@ -250,6 +252,7 @@ const GamingCard = ({
           activeTournament={activeTournament}
         />
         {joinRequest && <JoinRequest data={joinRequest} />}
+        {isCloseConfirmOpen && <CloseGamePopup close={() => setIsCloseConfirmOpen(false)} roomId={roomId} />}
       </div>
     </section>
   );

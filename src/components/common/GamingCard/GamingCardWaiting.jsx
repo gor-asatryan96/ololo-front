@@ -4,7 +4,7 @@ import classes from './GamingCard.module.scss';
 import OpponentSide from './components/OpponentSide';
 import UserSide from './components/UserSide';
 import { useLanguageData } from '../../../context/LanguageProvider';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { removeActiveTable } from '../../../redux/ducks/activeTablesDuck';
 
 const themeClass = {
@@ -18,7 +18,11 @@ const GamingCardWaiting = ({
   const dispatch = useDispatch()
   const { t } = useLanguageData();
   const {
-    notifyUser, notifyUserAvatarId, requestedUser, requestedUserAvatarId, isDeclined
+    avatarId,
+    remoteId,
+  } = useSelector(({ userInfo }) => userInfo);
+  const {
+    notifyUser, notifyUserAvatarId, isDeclined
   } = roomData;
 
   useEffect(() => {
@@ -44,7 +48,7 @@ const GamingCardWaiting = ({
             opponentAvatarId={notifyUserAvatarId} 
           />
           </div>
-          <UserSide remoteId={requestedUser} avatarId={requestedUserAvatarId} />
+          <UserSide remoteId={remoteId} avatarId={avatarId} />
 
         </header>
         <div className={classes.gamingCard__field}>
